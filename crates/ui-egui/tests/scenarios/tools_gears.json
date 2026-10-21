@@ -1,0 +1,201 @@
+[
+ {
+  "note": "Gear generators: spur gear, rack, bevel gear, worm, worm wheel and crown gear, each a component of its own; Ctrl+Z takes the last one back and Ctrl+Y brings it again; saved and opened again, the mesh bodies are all there."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.spur_gear",
+   "params": {
+    "module": 2,
+    "teeth": 20,
+    "width": 10,
+    "bore_mm": 8
+   }
+  },
+  "result": {
+   "pitch_diameter_mm": 40,
+   "tip_diameter_mm": 44
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.gear_rack",
+   "params": {
+    "module": 2,
+    "teeth": 10,
+    "width": 8
+   }
+  },
+  "result": {
+   "pitch_mm": [
+    6.2832,
+    0.0001
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.bevel_gear",
+   "params": {
+    "module": 2,
+    "teeth": 20,
+    "pitch_angle_deg": 45,
+    "face_width": 8
+   }
+  },
+  "result": {
+   "pitch_diameter_mm": 40
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.worm",
+   "params": {
+    "module": 2,
+    "pitch_diameter": 20,
+    "length": 40,
+    "starts": 2
+   }
+  },
+  "result": {
+   "axial_pitch_mm": [
+    6.2832,
+    0.0001
+   ],
+   "lead_mm": [
+    12.566,
+    0.0001
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.worm_wheel",
+   "params": {
+    "module": 2,
+    "teeth": 30,
+    "worm_pitch_diameter": 20,
+    "face_width": 12,
+    "bore_mm": 10
+   }
+  },
+  "result": {
+   "ratio": 30,
+   "centre_distance_mm": 40,
+   "pitch_diameter_mm": 60
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.crown_gear",
+   "params": {
+    "module": 2,
+    "teeth": 30,
+    "face_width": 10,
+    "thickness": 8,
+    "bore_mm": 8
+   }
+  },
+  "result": {
+   "pitch_diameter_mm": 60
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "bodies": 6,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_gears"
+ },
+ {
+  "key": "Z",
+  "cmd": true
+ },
+ {
+  "expect": {
+   "bodies": 5,
+   "errors": 0
+  }
+ },
+ {
+  "key": "Y",
+  "cmd": true
+ },
+ {
+  "expect": {
+   "bodies": 6,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.worm_wheel",
+   "params": {
+    "module": 2,
+    "teeth": 30,
+    "worm_pitch_diameter": 20,
+    "face_width": 30
+   }
+  },
+  "fail": true
+ },
+ {
+  "expect": {
+   "bodies": 6,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "file.save_as",
+   "params": {
+    "path": "$DIR/gears.solidcraft"
+   }
+  }
+ },
+ {
+  "expect": {
+   "file": "gears.solidcraft"
+  }
+ },
+ {
+  "call": "ui.file",
+  "params": {
+   "path": "$DIR/gears.solidcraft"
+  }
+ },
+ {
+  "until": {
+   "file_busy": false
+  }
+ },
+ {
+  "expect": {
+   "bodies": 6,
+   "errors": 0,
+   "documents": 2
+  }
+ }
+]

@@ -1,0 +1,170 @@
+[
+ {
+  "note": "Flow Analysis from the toolbar: water through a duct, the inlet and outlet faces picked from the left and the right, the speed typed, Compute."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 60,
+    "width": 28,
+    "height": 12,
+    "body_name": "Duct"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 60,
+    "width": 20,
+    "height": 4,
+    "corner": [
+     0,
+     4,
+     4
+    ],
+    "operation": "cut",
+    "targets": [
+     "Duct"
+    ]
+   }
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "start": "inspect.flow"
+ },
+ {
+  "expect": {
+   "dialog": "Flow"
+  }
+ },
+ {
+  "click": {
+   "world": [
+    30,
+    14,
+    12
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 1
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "left"
+  }
+ },
+ {
+  "click": {
+   "world": [
+    0,
+    2,
+    6
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 2
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "right"
+  }
+ },
+ {
+  "click": {
+   "world": [
+    60,
+    2,
+    6
+   ]
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "widget": "0.5",
+  "near": "Speed (m/s)"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "0.005"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "widget": "40",
+  "near": "Resolution"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "60"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "click": {
+   "handle": "flow:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Flow",
+   "widgets": [
+    "Pressure drop",
+    "Flow rate",
+    "Reynolds"
+   ]
+  }
+ },
+ {
+  "shot": "tools_flow"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 1,
+   "errors": 0
+  }
+ }
+]

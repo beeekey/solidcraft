@@ -56,6 +56,20 @@ A new file in `crates/ui-egui/tests/scenarios/` is picked up automatically. To r
 before it's fixed, add a `{"pending": "why"}` step; its test is then ignored with that reason, and
 the fix removes the step.
 
+A `call` step may carry `"result": {"path.to.key": value}` to check the answer it gets back, and
+an `expect` may list `widgets` (texts some visible widget must show, such as a dialog's result
+rows) or `no_widgets`. The `tools_*` scenarios cover the analysis dialogs (stress with bodies in
+contact, thermal, flow, the calculators), the generators (gears and worm drives, drive parts,
+frames, pipes and welds, plastic and bamboo parts, lattices and brick kits), generative design,
+the manufacturing checks and canvas tracing, each through the app: toolbar, picks, typed fields,
+undo and redo, save and reopen; `tools_3deee_tab` drives the 3DEEE tab's forms from the toolbar and
+`tools_printed_stress` the printed-part stress and infill comparison forms; `tools_print_prep` the elephant foot,
+hole compensation, split for print, topology optimisation and grill; `tools_implicit` the variable shell, blend
+boolean, stress zone and probe; `tools_bamboo_frames` the bamboo connector, frames, bearing and damper and the
+frame edits; `tools_image_ray` the picture tools and the ray trace.
+Every step and check is documented at the top of
+`crates/ui-egui/src/scenario.rs`.
+
 ## CI profile
 
 CI runs the tests with `--profile ci`: light optimisation, line tables, no LTO and debug

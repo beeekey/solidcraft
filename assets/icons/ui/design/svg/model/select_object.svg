@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Select object</title>
+  <path d="M8 9L56 9A3 3 0 0 1 59 12L59 52A3 3 0 0 1 56 55L8 55A3 3 0 0 1 5 52L5 12A3 3 0 0 1 8 9Z" fill="#b8c3cf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10 14L54 14L54 50L10 50Z" fill="#e2e8ef"/>
+  <path d="M22 44C18 36 24 24 34 24C42 24 48 30 46 38C44 46 36 46 32 44C28 42 24 48 22 44Z" fill="#b8c3cf"/>
+  <path d="M22 44C18 36 24 24 34 24C42 24 48 30 46 38C44 46 36 46 32 44C28 42 24 48 22 44Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M17 19L51 19A1 1 0 0 1 52 20L52 49A1 1 0 0 1 51 50L17 50A1 1 0 0 1 16 49L16 20A1 1 0 0 1 17 19Z" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <circle cx="16" cy="19" r="3.8" fill="#ffffff"/>
+  <path d="M13.4 16.4L18.6 16.4L18.6 21.6L13.4 21.6Z" fill="#236ead"/>
+  <circle cx="52" cy="19" r="3.8" fill="#ffffff"/>
+  <path d="M49.4 16.4L54.6 16.4L54.6 21.6L49.4 21.6Z" fill="#236ead"/>
+  <circle cx="16" cy="50" r="3.8" fill="#ffffff"/>
+  <path d="M13.4 47.4L18.6 47.4L18.6 52.6L13.4 52.6Z" fill="#236ead"/>
+  <circle cx="52" cy="50" r="3.8" fill="#ffffff"/>
+  <path d="M49.4 47.4L54.6 47.4L54.6 52.6L49.4 52.6Z" fill="#236ead"/>
+</svg>

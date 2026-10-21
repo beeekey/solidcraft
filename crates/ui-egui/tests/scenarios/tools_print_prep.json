@@ -1,0 +1,302 @@
+[
+ {
+  "note": "Getting parts ready for the printer: the elephant foot chamfer on a block, the bores of a plate widened, a tall body split with pins, a bar topology-optimised, a grill cut in a wall; then Split for Print from the 3DEEE tab with the body picked."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 30,
+    "width": 20,
+    "height": 10,
+    "body_name": "Block"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "print.elephant_foot",
+   "params": {
+    "body": "Block",
+    "distance_mm": 0.5
+   }
+  },
+  "result": {
+   "edges": 4,
+   "distance_mm": 0.5
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 40,
+    "width": 30,
+    "height": 8,
+    "corner": [
+     50,
+     0,
+     0
+    ],
+    "body_name": "Plate"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 2,
+    "height": 8,
+    "base": [
+     60,
+     15,
+     0
+    ],
+    "operation": "cut",
+    "targets": [
+     "Plate"
+    ]
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.cylinder",
+   "params": {
+    "radius": 3,
+    "height": 5,
+    "base": [
+     80,
+     20,
+     8
+    ],
+    "operation": "join",
+    "targets": [
+     "Plate"
+    ]
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "print.hole_compensation",
+   "params": {
+    "body": "Plate",
+    "delta_mm": 0.4
+   }
+  },
+  "result": {
+   "bores": 1,
+   "diameters_mm.0": 4
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 60,
+    "width": 40,
+    "height": 50,
+    "corner": [
+     0,
+     60,
+     0
+    ],
+    "body_name": "Tall"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "print.split",
+   "params": {
+    "body": "Tall"
+   }
+  },
+  "result": {
+   "pins": 4,
+   "axis": "Z",
+   "station_mm": 25
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 60,
+    "width": 10,
+    "height": 20,
+    "corner": [
+     0,
+     -40,
+     0
+    ],
+    "body_name": "Bar"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "construct.topology_optimize",
+   "params": {
+    "body": "Bar",
+    "fixed": [
+     0,
+     -35,
+     10
+    ],
+    "load": [
+     60,
+     -35,
+     10
+    ],
+    "force_n": [
+     0,
+     0,
+     -100
+    ],
+    "resolution": 14
+   }
+  },
+  "result": {
+   "kept_fraction": [
+    0.5,
+    0.3
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 60,
+    "width": 40,
+    "height": 3,
+    "corner": [
+     120,
+     0,
+     0
+    ],
+    "body_name": "Wall"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "plastic.grill",
+   "params": {
+    "face": [
+     150,
+     20,
+     3
+    ],
+    "rim_height_mm": 1
+   }
+  },
+  "result": {
+   "slots": 3,
+   "rim": true,
+   "wall_mm": [
+    3,
+    0.01
+   ]
+  }
+ },
+ {
+  "expect": {
+   "bodies": 7,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 30,
+    "width": 30,
+    "height": 40,
+    "corner": [
+     200,
+     0,
+     0
+    ],
+    "body_name": "Post"
+   }
+  }
+ },
+ {
+  "click": {
+   "tab": "3DEEE"
+  }
+ },
+ {
+  "expect": {
+   "shown_handles": [
+    "panel:3DEEE:MAKE",
+    "button:inspect.print"
+   ]
+  }
+ },
+ {
+  "start": "print.split"
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "SPLIT FOR PRINT",
+    "Cut plane normal",
+    "Alignment pins",
+    "OK"
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    215,
+    15,
+    40
+   ]
+  }
+ },
+ {
+  "key": "Enter"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 9,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_print_prep"
+ }
+]
