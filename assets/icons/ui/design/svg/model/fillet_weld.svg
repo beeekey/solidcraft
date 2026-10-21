@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Fillet weld</title>
+  <path d="M4.72 42.12L32 57.88L32 61.25L4.72 45.5Z" fill="#b8c3cf"/>
+  <path d="M59.28 42.12L32 57.88L32 61.25L59.28 45.5Z" fill="#8e9faf"/>
+  <path d="M32 26.38L59.28 42.12L32 57.88L4.72 42.12Z" fill="#e2e8ef"/>
+  <path d="M32 26.38L59.28 42.12L59.28 45.5L32 61.25L4.72 45.5L4.72 42.12Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M4.72 42.12L32 57.88L59.28 42.12" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 57.88L32 61.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M20.31 16.25L47.59 32L47.59 48.88L20.31 33.12Z" fill="#b8c3cf"/>
+  <path d="M51.49 29.75L47.59 32L47.59 48.88L51.49 46.62Z" fill="#8e9faf"/>
+  <path d="M24.21 14L51.49 29.75L47.59 32L20.31 16.25Z" fill="#e2e8ef"/>
+  <path d="M24.21 14L51.49 29.75L51.49 46.62L47.59 48.88L20.31 33.12L20.31 16.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M20.31 16.25L47.59 32L51.49 29.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M47.59 32L47.59 48.88" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M13.49 37.06L40.77 52.81L47.59 41L20.31 25.25Z" fill="#b9ddf8"/>
+  <path d="M13.49 37.06L40.77 52.81L47.59 41L20.31 25.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M47.59 48.88L40.77 52.81L47.59 41Z" fill="#328bd3"/>
+  <path d="M47.59 48.88L40.77 52.81L47.59 41Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

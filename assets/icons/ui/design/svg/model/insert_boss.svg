@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Heat-set insert boss</title>
+  <path d="M4.72 41L32 56.75L32 61.25L4.72 45.5Z" fill="#b8c3cf"/>
+  <path d="M59.28 41L32 56.75L32 61.25L59.28 45.5Z" fill="#8e9faf"/>
+  <path d="M32 25.25L59.28 41L32 56.75L4.72 41Z" fill="#e2e8ef"/>
+  <path d="M32 25.25L59.28 41L59.28 45.5L32 61.25L4.72 45.5L4.72 41Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M4.72 41L32 56.75L59.28 41" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 56.75L32 61.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22.36 28L22.36 41A9.64 5.57 0 0 0 41.64 41L41.64 28Z" fill="#b8c3cf"/>
+  <path d="M35.38 28L35.38 46.22A9.64 5.57 0 0 0 41.64 41L41.64 28Z" fill="#8e9faf"/>
+  <path d="M22.36 28L22.36 41A9.64 5.57 0 0 0 41.64 41L41.64 28Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22.36 28A9.64 5.57 0 1 0 41.64 28A9.64 5.57 0 1 0 22.36 28Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M26.49 28A5.51 3.18 0 1 0 37.51 28A5.51 3.18 0 1 0 26.49 28Z" fill="#328bd3" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M29.24 28A2.76 1.59 0 1 0 34.76 28A2.76 1.59 0 1 0 29.24 28Z" fill="#8e9faf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M27.59 30.55L27.59 28.95" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M29.8 30.55L29.8 28.95" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 30.55L32 28.95" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M34.2 30.55L34.2 28.95" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M36.41 30.55L36.41 28.95" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

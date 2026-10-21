@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Groove weld</title>
+  <path d="M4.72 36.5L16.41 43.25L16.41 52.25L4.72 45.5Z" fill="#b8c3cf"/>
+  <path d="M43.69 27.5L16.41 43.25L16.41 52.25L43.69 36.5Z" fill="#8e9faf"/>
+  <path d="M32 20.75L43.69 27.5L16.41 43.25L4.72 36.5Z" fill="#e2e8ef"/>
+  <path d="M32 20.75L43.69 27.5L43.69 36.5L16.41 52.25L4.72 45.5L4.72 36.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M4.72 36.5L16.41 43.25L43.69 27.5" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M16.41 43.25L16.41 52.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M20.31 45.5L32 52.25L32 61.25L20.31 54.5Z" fill="#b8c3cf"/>
+  <path d="M59.28 36.5L32 52.25L32 61.25L59.28 45.5Z" fill="#8e9faf"/>
+  <path d="M47.59 29.75L59.28 36.5L32 52.25L20.31 45.5Z" fill="#e2e8ef"/>
+  <path d="M47.59 29.75L59.28 36.5L59.28 45.5L32 61.25L20.31 54.5L20.31 45.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M20.31 45.5L32 52.25L59.28 36.5" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 52.25L32 61.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M40.77 25.81L13.49 41.56L18.36 52.25L45.64 36.5Z" fill="#328bd3"/>
+  <path d="M40.77 25.81L13.49 41.56L18.36 52.25L45.64 36.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M40.77 25.81L50.51 31.44L23.23 47.19L13.49 41.56Z" fill="#b9ddf8"/>
+  <path d="M40.77 25.81L50.51 31.44L23.23 47.19L13.49 41.56Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M13.49 41.56L23.23 47.19L18.36 52.25Z" fill="#328bd3"/>
+  <path d="M13.49 41.56L23.23 47.19L18.36 52.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

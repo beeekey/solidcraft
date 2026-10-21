@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>End cap</title>
+  <path d="M10.57 26.38L33.95 39.88L33.95 53.38L10.57 39.88Z" fill="#b8c3cf"/>
+  <path d="M45.64 33.12L33.95 39.88L33.95 53.38L45.64 46.62Z" fill="#8e9faf"/>
+  <path d="M22.26 19.62L45.64 33.12L33.95 39.88L10.57 26.38Z" fill="#e2e8ef"/>
+  <path d="M22.26 19.62L45.64 33.12L45.64 46.62L33.95 53.38L10.57 39.88L10.57 26.38Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 26.38L33.95 39.88L45.64 33.12" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M33.95 39.88L33.95 53.38" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M33.46 39.59L35.41 40.72L35.41 56.47L33.46 55.34Z" fill="#328bd3"/>
+  <path d="M49.05 32.84L35.41 40.72L35.41 56.47L49.05 48.59Z" fill="#236ead"/>
+  <path d="M47.1 31.72L49.05 32.84L35.41 40.72L33.46 39.59Z" fill="#b9ddf8"/>
+  <path d="M47.1 31.72L49.05 32.84L49.05 48.59L35.41 56.47L33.46 55.34L33.46 39.59Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M33.46 39.59L35.41 40.72L49.05 32.84" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M35.41 40.72L35.41 56.47" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

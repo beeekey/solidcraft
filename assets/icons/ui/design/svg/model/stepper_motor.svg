@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Stepper motor</title>
+  <path d="M10.57 27.5L32 39.88L32 57.88L10.57 45.5Z" fill="#b8c3cf"/>
+  <path d="M53.43 27.5L32 39.88L32 57.88L53.43 45.5Z" fill="#8e9faf"/>
+  <path d="M32 15.12L53.43 27.5L32 39.88L10.57 27.5Z" fill="#e2e8ef"/>
+  <path d="M32 15.12L53.43 27.5L53.43 45.5L32 57.88L10.57 45.5L10.57 27.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 27.5L32 39.88L53.43 27.5" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 39.88L32 57.88" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23.73 24.5L23.73 27.5A8.27 4.77 0 0 0 40.27 27.5L40.27 24.5Z" fill="#b8c3cf"/>
+  <path d="M34.89 24.5L34.89 31.97A8.27 4.77 0 0 0 40.27 27.5L40.27 24.5Z" fill="#8e9faf"/>
+  <path d="M23.73 24.5L23.73 27.5A8.27 4.77 0 0 0 40.27 27.5L40.27 24.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23.73 24.5A8.27 4.77 0 1 0 40.27 24.5A8.27 4.77 0 1 0 23.73 24.5Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M29.24 15.12L29.24 24.12A2.76 1.59 0 0 0 34.76 24.12L34.76 15.12Z" fill="#328bd3"/>
+  <path d="M32.96 15.12L32.96 25.62A2.76 1.59 0 0 0 34.76 24.12L34.76 15.12Z" fill="#236ead"/>
+  <path d="M29.24 15.12L29.24 24.12A2.76 1.59 0 0 0 34.76 24.12L34.76 15.12Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M29.24 15.12A2.76 1.59 0 1 0 34.76 15.12A2.76 1.59 0 1 0 29.24 15.12Z" fill="#b9ddf8" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M30.07 18.5A1.93 1.11 0 1 0 33.93 18.5A1.93 1.11 0 1 0 30.07 18.5Z" fill="#8e9faf" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M45.66 27.5A1.93 1.11 0 1 0 49.52 27.5A1.93 1.11 0 1 0 45.66 27.5Z" fill="#8e9faf" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14.48 27.5A1.93 1.11 0 1 0 18.34 27.5A1.93 1.11 0 1 0 14.48 27.5Z" fill="#8e9faf" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M30.07 36.5A1.93 1.11 0 1 0 33.93 36.5A1.93 1.11 0 1 0 30.07 36.5Z" fill="#8e9faf" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

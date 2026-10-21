@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Grain failure</title>
+  <path d="M6 30L32 45.01L32 49.01L6 34Z" fill="#b8c3cf"/>
+  <path d="M58 30L32 45.01L32 49.01L58 34Z" fill="#8e9faf"/>
+  <path d="M32 14.99L58 30L32 45.01L6 30Z" fill="#e2e8ef"/>
+  <path d="M32 14.99L58 30L58 34L32 49.01L6 34L6 30Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6 30L32 45.01L58 30" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 45.01L32 49.01" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M30.27 16.99L54.53 31" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M25.07 19.99L49.33 34" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M19.87 22.99L44.13 37" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14.67 26L38.93 40.01" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M9.47 29L33.73 43.01" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M25.07 19.99L31.13 24.49L27.67 30.5L35.47 33L32 39.01L38.07 40.51" fill="none" stroke="#ffffff" stroke-width="6.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M25.07 19.99L31.13 24.49L27.67 30.5L35.47 33L32 39.01L38.07 40.51" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
