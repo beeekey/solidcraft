@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Free-form body</title>
+  <path d="M32 32L55.38 45.5L55.38 18.5L32 5Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <path d="M32 32L8.62 45.5L8.62 18.5L32 5Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <path d="M14 40C10 28 20 16 32 18C44 20 54 26 52 38C50 50 40 54 30 50C22 48 17 46 14 40Z" fill="#328bd3"/>
+  <path d="M14 40C10 28 20 16 32 18C44 20 54 26 52 38C50 50 40 54 30 50C22 48 17 46 14 40Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22 36C22 28 30 24 38 26C34 30 30 34 22 36Z" fill="#b9ddf8"/>
+</svg>

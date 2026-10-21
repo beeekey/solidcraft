@@ -1,0 +1,145 @@
+[
+ {
+  "note": "Thermal Analysis from the toolbar: an aluminium plate heated on top and held at one end, the power typed, Compute."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 60,
+    "width": 10,
+    "height": 60,
+    "body_name": "Plate"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "material.assign",
+   "params": {
+    "bodies": [
+     "Plate"
+    ],
+    "material": "Aluminum"
+   }
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "start": "inspect.thermal"
+ },
+ {
+  "expect": {
+   "dialog": "Thermal"
+  }
+ },
+ {
+  "click": {
+   "world": [
+    30,
+    0,
+    30
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 1
+  }
+ },
+ {
+  "click": {
+   "world": [
+    30,
+    5,
+    60
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 2
+  }
+ },
+ {
+  "click": {
+   "world": [
+    60,
+    5,
+    30
+   ]
+  }
+ },
+ {
+  "widget": "5",
+  "near": "Power (W)"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "8"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "widget": "32",
+  "near": "Resolution"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "24"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "click": {
+   "handle": "thermal:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Thermal",
+   "widgets": [
+    "Peak",
+    "Surface",
+    "Heat path",
+    "Aluminum"
+   ]
+  }
+ },
+ {
+  "shot": "tools_thermal"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 1,
+   "errors": 0
+  }
+ }
+]

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Hole stack</title>
+  <path d="M8 21.15L50 21.15L50 30.15L8 30.15Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14 30.15L56 30.15L56 39.15L14 39.15Z" fill="#b8c3cf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M26 21.15L34 21.15L34 30.15L26 30.15Z" fill="#8e9faf"/>
+  <path d="M26 21.15L26 30.15" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M34 21.15L34 30.15" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M31 30.15L39 30.15L39 39.15L31 39.15Z" fill="#8e9faf"/>
+  <path d="M31 30.15L31 39.15" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M39 30.15L39 39.15" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M30 13.15L30 45.15" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 2.5"/>
+  <path d="M35 13.15L35 45.15" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 2.5"/>
+  <path d="M23 49.15L36 49.15" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M41 49.15L35 52.15L35 46.15Z" fill="#236ead"/>
+  <path d="M42 49.15L29 49.15" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24 49.15L30 46.15L30 52.15Z" fill="#236ead"/>
+</svg>

@@ -1,0 +1,382 @@
+[
+ {
+  "note": "Printed-part stress: a bar as it comes off the printer. Flat, its bending stress runs within the layers; standing on end the same load pulls the layers apart; with one wall and lightning infill it gives. Then every infill pattern at one mass, and both forms from the 3DEEE tab with the body and faces picked."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 80,
+    "width": 10,
+    "height": 10,
+    "body_name": "Bar"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.printed_stress",
+   "params": {
+    "body": "Bar",
+    "fixed": [
+     0,
+     5,
+     5
+    ],
+    "load": [
+     80,
+     5,
+     5
+    ],
+    "force_n": [
+     0,
+     0,
+     -20
+    ],
+    "resolution": 16
+   }
+  },
+  "result": {
+   "body": "Bar",
+   "governs": "within a layer",
+   "settings.pattern": "Grid",
+   "settings.material": "PLA",
+   "converged": true
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.printed_stress",
+   "params": {
+    "body": "Bar",
+    "fixed": [
+     0,
+     5,
+     5
+    ],
+    "load": [
+     80,
+     5,
+     5
+    ],
+    "force_n": [
+     0,
+     0,
+     -20
+    ],
+    "resolution": 16,
+    "up": [
+     1,
+     0,
+     0
+    ]
+   }
+  },
+  "result": {
+   "governs": "between layers",
+   "up.0": 1
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.printed_stress",
+   "params": {
+    "body": "Bar",
+    "fixed": [
+     0,
+     5,
+     5
+    ],
+    "load": [
+     80,
+     5,
+     5
+    ],
+    "force_n": [
+     0,
+     0,
+     -200
+    ],
+    "resolution": 16,
+    "pattern": "Lightning",
+    "walls": 1,
+    "infill": 0.05
+   }
+  },
+  "result": {
+   "settings.walls": 1,
+   "settings.pattern": "Lightning"
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.compare_infill",
+   "params": {
+    "body": "Bar",
+    "fixed": [
+     0,
+     5,
+     5
+    ],
+    "load": [
+     80,
+     5,
+     5
+    ],
+    "force_n": [
+     0,
+     0,
+     -20
+    ],
+    "resolution": 12,
+    "walls": 1
+   }
+  },
+  "result": {
+   "patterns.0.pattern": "Grid",
+   "patterns.6.pattern": "Gyroid",
+   "patterns.10.pattern": "Lightning"
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.infill_section",
+   "params": {
+    "body": "Bar",
+    "infill": 0.2,
+    "walls": 2
+   }
+  },
+  "result": {
+   "axis": "Z",
+   "pitch_mm": [
+    4.2,
+    0.01
+   ],
+   "walls": 8,
+   "strands": 21,
+   "truncated": false
+  }
+ },
+ {
+  "expect": {
+   "bodies": 1,
+   "errors": 0
+  }
+ },
+ {
+  "click": {
+   "tab": "3DEEE"
+  }
+ },
+ {
+  "expect": {
+   "shown_handles": [
+    "panel:3DEEE:MAKE",
+    "button:inspect.print",
+    "button:inspect.printed_stress"
+   ]
+  }
+ },
+ {
+  "start": "inspect.printed_stress"
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "PRINTED STRESS",
+    "Fixed face",
+    "Load face",
+    "Infill pattern",
+    "Wall loops",
+    "Compute"
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    40,
+    5,
+    10
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 1
+  }
+ },
+ {
+  "click": {
+   "world": [
+    80,
+    5,
+    5
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 2
+  }
+ },
+ {
+  "click": {
+   "world": [
+    40,
+    0,
+    5
+   ]
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Governs",
+    "Safety in plane",
+    "Safety interlayer",
+    "Max layer normal (MPa)",
+    "Verdict"
+   ],
+   "bodies": 1,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_printed_stress"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.compare_infill"
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "COMPARE INFILL",
+    "Filament",
+    "Compute"
+   ],
+   "no_widgets": [
+    "Infill pattern"
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    40,
+    5,
+    10
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 1
+  }
+ },
+ {
+  "click": {
+   "world": [
+    80,
+    5,
+    5
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 2
+  }
+ },
+ {
+  "click": {
+   "world": [
+    40,
+    0,
+    5
+   ]
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Patterns",
+    "Stiffest",
+    "Safest between layers",
+    "Verdict"
+   ],
+   "bodies": 1,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_compare_infill"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 1,
+   "errors": 0
+  }
+ }
+]

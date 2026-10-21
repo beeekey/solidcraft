@@ -32,7 +32,7 @@ pub fn tab_name(tab: &str) -> String {
     crate::i18n::tr_label(&cased).to_string()
 }
 
-pub const TABS: &[&str] = &["MODEL", "SURFACE", "ASSEMBLE", "INSERT", "INSPECT", "MANAGE", "VIEW"];
+pub const TABS: &[&str] = &["MODEL", "SURFACE", "ASSEMBLE", "INSERT", "INSPECT", "MANAGE", "3DEEE", "VIEW"];
 
 /// Reading order of the compact, three-column constraint gallery. Icons come from each spec.
 pub const CONSTRAINT_GALLERY: &[&str] = &[
@@ -323,6 +323,17 @@ pub const SECTIONS: &[Section] = &[
     Section { tab: "WELDMENTS", panel: "SKETCH", promoted: 1, ids: &["sketch.create"] },
     Section { tab: "WELDMENTS", panel: "CREATE", promoted: 1, ids: &["frame.member"] },
     Section { tab: "WELDMENTS", panel: "CONFIGURE", promoted: 2, ids: CONFIGURE },
+    // The design tools: generators, structures, lattices, generative design, the manufacturing
+    // checks, the calculators and tracing, each with a dialog built from its parameter list. The
+    // commands come from their registry placement (`.at("3DEEE", panel)`) in registry order.
+    Section { tab: "3DEEE", panel: "GEARS", promoted: 3, ids: &[] },
+    Section { tab: "3DEEE", panel: "DRIVE", promoted: 3, ids: &[] },
+    Section { tab: "3DEEE", panel: "PARTS", promoted: 2, ids: &[] },
+    Section { tab: "3DEEE", panel: "STRUCTURE", promoted: 3, ids: &[] },
+    Section { tab: "3DEEE", panel: "GENERATIVE", promoted: 2, ids: &[] },
+    Section { tab: "3DEEE", panel: "MAKE", promoted: 4, ids: &[] },
+    Section { tab: "3DEEE", panel: "CALCULATE", promoted: 2, ids: &[] },
+    Section { tab: "3DEEE", panel: "TRACE", promoted: 1, ids: &[] },
 ];
 
 // Migration data only: Render commands remain registered, but have no live ribbon sections.
@@ -404,6 +415,7 @@ pub const RIBBON_LABELS: &[(&str, &str)] = &[
     ("render.settings.apply", "Saved Camera"),
     ("render.preflight", "Check"),
     ("appearance.assign", "Appearance"),
+    ("canvas.remove_background", "Background"),
     ("component.capture_position", "Capture Pos."),
     ("component.create", "New Comp."),
     ("component.from_bodies", "From Bodies"),
@@ -411,8 +423,10 @@ pub const RIBBON_LABELS: &[(&str, &str)] = &[
     ("component.properties", "Properties"),
     ("component.revert_position", "Revert Pos."),
     ("config.table", "Config Table"),
+    ("construct.topology_optimize", "Topology Opt."),
     ("contact.check", "Contact"),
     ("contact.enable_sets", "Contact Sets"),
+    ("design.insert_boss", "Insert Boss"),
     ("document.inspect", "Inspect"),
     ("document.units", "Units"),
     ("inspect.accessibility", "Access"),
@@ -422,7 +436,12 @@ pub const RIBBON_LABELS: &[(&str, &str)] = &[
     ("inspect.draft", "Draft"),
     ("inspect.interference", "Interference"),
     ("inspect.isocurve", "Isocurve"),
+    ("inspect.machining", "Machining"),
+    ("inspect.print", "Print Check"),
+    ("inspect.print_orient", "Orientation"),
+    ("inspect.printed_stress", "Print Stress"),
     ("inspect.section", "Section"),
+    ("inspect.thread_engagement", "Engagement"),
     ("inspect.zebra", "Zebra"),
     ("joint.as_built", "As-Built"),
     ("material.assign", "Material"),
@@ -497,6 +516,14 @@ pub const PLACEMENTS: &[(&str, &str, &str, &str)] = &[
     ("PLASTIC", "CREATE", "MODEL", "CREATE"),
     ("PLASTIC", "SETUP", "MANAGE", "RULES"),
     ("MESH", "MODIFY", "INSERT", "FILES"),
+    ("3DEEE", "GEARS", "3DEEE", "GEARS"),
+    ("3DEEE", "DRIVE", "3DEEE", "DRIVE"),
+    ("3DEEE", "PARTS", "3DEEE", "PARTS"),
+    ("3DEEE", "STRUCTURE", "3DEEE", "STRUCTURE"),
+    ("3DEEE", "GENERATIVE", "3DEEE", "GENERATIVE"),
+    ("3DEEE", "MAKE", "3DEEE", "MAKE"),
+    ("3DEEE", "CALCULATE", "3DEEE", "CALCULATE"),
+    ("3DEEE", "TRACE", "3DEEE", "TRACE"),
     ("RENDER", "SCENE", "RENDER CAMERA", "SHOTS"),
     ("RENDER", "IMAGE", "RENDER", "RENDER"),
 ];
@@ -635,6 +662,7 @@ pub fn tab_icon(tab: &str) -> &'static str {
         "INSERT" => "import",
         "INSPECT" => "measure",
         "MANAGE" => "params",
+        "3DEEE" => "spur_gear",
         "VIEW" => "camera",
         _ => SPECIALTY_TABS.iter().find(|o| o.tab == tab).map_or("", |o| o.icon),
     }
@@ -1110,7 +1138,7 @@ mod tests {
         let rows: Vec<_> = crate::toolbar_custom::toolbar_items(&h.app).into_iter().filter(|i| i.id == "ui.toolbarTab").collect();
         assert_eq!(
             rows.iter().map(|i| i.label.as_str()).collect::<Vec<_>>(),
-            ["Model", "Surface", "Assemble", "Insert", "Inspect", "Manage", "View", "Sheet Metal", "Weldments"]
+            ["Model", "Surface", "Assemble", "Insert", "Inspect", "Manage", "3DEEE", "View", "Sheet Metal", "Weldments"]
         );
         assert!(rows.iter().all(|i| i.shortcut == "current"), "all existing tabs stay on by default");
         h.step(&json!({"click":{"handle":"ribbon:add_tab"}})).unwrap();

@@ -1,0 +1,295 @@
+[
+ {
+  "note": "Implicit modelling and the stress extras: a cube shelled to a skin, two bars joined with a rounded seam, a bar's stress zone built and its stress probed; then Blend Boolean from the 3DEEE tab with both bodies picked."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 30,
+    "width": 30,
+    "height": 30,
+    "body_name": "Cube"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "construct.variable_shell",
+   "params": {
+    "body": "Cube",
+    "thickness_mm": 3,
+    "sample_mm": 1.0
+   }
+  },
+  "result": {
+   "operation": "shell",
+   "volume_mm3": [
+    13176,
+    1700
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 30,
+    "width": 10,
+    "height": 10,
+    "corner": [
+     50,
+     0,
+     0
+    ],
+    "body_name": "A"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 10,
+    "width": 10,
+    "height": 30,
+    "corner": [
+     60,
+     0,
+     0
+    ],
+    "body_name": "B"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "construct.blend_boolean",
+   "params": {
+    "body": "A",
+    "tool": "B",
+    "blend_mm": 3,
+    "sample_mm": 0.75,
+    "name": "Rounded"
+   }
+  },
+  "result": {
+   "operation": "join",
+   "tool": "B"
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 80,
+    "width": 10,
+    "height": 10,
+    "corner": [
+     0,
+     50,
+     0
+    ],
+    "body_name": "Bar"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.stress_zone",
+   "params": {
+    "body": "Bar",
+    "fixed": [
+     0,
+     55,
+     5
+    ],
+    "load": [
+     80,
+     55,
+     5
+    ],
+    "force_n": [
+     0,
+     0,
+     -50
+    ],
+    "resolution": 16
+   }
+  },
+  "result": {
+   "body": "Bar"
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.probe",
+   "params": {
+    "body": "Bar",
+    "fixed": [
+     0,
+     55,
+     5
+    ],
+    "load": [
+     80,
+     55,
+     5
+    ],
+    "force_n": [
+     0,
+     0,
+     -50
+    ],
+    "resolution": 16,
+    "at": [
+     3,
+     55,
+     9.5
+    ]
+   }
+  },
+  "result": {
+   "body": "Bar",
+   "element_mm": 5
+  }
+ },
+ {
+  "expect": {
+   "bodies": 7,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 20,
+    "width": 20,
+    "height": 20,
+    "corner": [
+     120,
+     0,
+     0
+    ],
+    "body_name": "P"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 20,
+    "width": 20,
+    "height": 20,
+    "corner": [
+     135,
+     0,
+     0
+    ],
+    "body_name": "Q"
+   }
+  }
+ },
+ {
+  "click": {
+   "tab": "3DEEE"
+  }
+ },
+ {
+  "expect": {
+   "shown_handles": [
+    "panel:3DEEE:STRUCTURE"
+   ]
+  }
+ },
+ {
+  "start": "construct.blend_boolean"
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "BLEND BOOLEAN",
+    "Body",
+    "Tool body",
+    "Blend (mm)",
+    "Build"
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    125,
+    10,
+    20
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 1
+  }
+ },
+ {
+  "click": {
+   "world": [
+    150,
+    10,
+    20
+   ]
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Volume (mm\u00b3)",
+    "Built"
+   ],
+   "bodies": 10,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_implicit"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ }
+]

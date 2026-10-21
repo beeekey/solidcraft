@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Grill</title>
+  <path d="M2.77 41L32 57.88L32 62.38L2.77 45.5Z" fill="#b8c3cf"/>
+  <path d="M61.23 41L32 57.88L32 62.38L61.23 45.5Z" fill="#8e9faf"/>
+  <path d="M32 24.12L61.23 41L32 57.88L2.77 41Z" fill="#e2e8ef"/>
+  <path d="M32 24.12L61.23 41L61.23 45.5L32 62.38L2.77 45.5L2.77 41Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M2.77 41L32 57.88L61.23 41" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 57.88L32 62.38" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 28.62L53.43 41L50.12 42.91L28.69 30.54Z" fill="#328bd3"/>
+  <path d="M32 28.62L53.43 41L50.12 42.91L28.69 30.54Z" fill="none" stroke="#34465b" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M25.67 32.28L47.1 44.66L43.79 46.57L22.35 34.19Z" fill="#328bd3"/>
+  <path d="M25.67 32.28L47.1 44.66L43.79 46.57L22.35 34.19Z" fill="none" stroke="#34465b" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M19.33 35.94L40.77 48.31L37.46 50.23L16.02 37.85Z" fill="#328bd3"/>
+  <path d="M19.33 35.94L40.77 48.31L37.46 50.23L16.02 37.85Z" fill="none" stroke="#34465b" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M13 39.59L34.44 51.97L31.12 53.88L9.69 41.51Z" fill="#328bd3"/>
+  <path d="M13 39.59L34.44 51.97L31.12 53.88L9.69 41.51Z" fill="none" stroke="#34465b" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

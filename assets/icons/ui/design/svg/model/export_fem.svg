@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Export FEM case</title>
+  <path d="M8.62 23L28.1 34.25L28.1 56.75L8.62 45.5Z" fill="#b8c3cf"/>
+  <path d="M51.49 20.75L28.1 34.25L28.1 56.75L51.49 43.25Z" fill="#8e9faf"/>
+  <path d="M32 9.5L51.49 20.75L28.1 34.25L8.62 23Z" fill="#e2e8ef"/>
+  <path d="M32 9.5L51.49 20.75L51.49 43.25L28.1 56.75L8.62 45.5L8.62 23Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 23L28.1 34.25L51.49 20.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M28.1 34.25L28.1 56.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M38.5 13.25L15.11 26.75L15.11 49.25" fill="none" stroke="#236ead" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 38L28.1 49.25" fill="none" stroke="#236ead" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24.21 14L43.69 25.25L43.69 47.75" fill="none" stroke="#236ead" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M44.99 17L21.61 30.5L21.61 53" fill="none" stroke="#236ead" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 30.5L28.1 41.75" fill="none" stroke="#236ead" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M16.41 18.5L35.9 29.75L35.9 52.25" fill="none" stroke="#236ead" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M42 52L52 52" fill="none" stroke="#ffffff" stroke-width="6.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M60 52L51 56.5L51 47.5Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M42 52L52 52" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M60 52L51 56.5L51 47.5Z" fill="#236ead"/>
+</svg>

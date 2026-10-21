@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>General tolerance</title>
+  <path d="M7.01 32.92L32.01 47.36L32.01 51.2L7.01 36.77Z" fill="#b8c3cf"/>
+  <path d="M57.01 32.92L32.01 47.36L32.01 51.2L57.01 36.77Z" fill="#8e9faf"/>
+  <path d="M32.01 18.49L57.01 32.92L32.01 47.36L7.01 32.92Z" fill="#e2e8ef"/>
+  <path d="M32.01 18.49L57.01 32.92L57.01 36.77L32.01 51.2L7.01 36.77L7.01 32.92Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M7.01 32.92L32.01 47.36L57.01 32.92" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32.01 47.36L32.01 51.2" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M7.01 55.36L32.01 55.36" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M7.01 51.36L7.01 59.36" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32.01 51.36L32.01 59.36" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M7.01 33.92L7.01 55.36" fill="none" stroke="#6f879c" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32.01 48.36L32.01 55.36" fill="none" stroke="#6f879c" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M28.01 8.85L36.01 8.85" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32.01 4.85L32.01 12.85" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M28.01 16.85L36.01 16.85" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
