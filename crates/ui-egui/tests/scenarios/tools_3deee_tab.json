@@ -1,0 +1,316 @@
+[
+ {
+  "note": "The 3DEEE tab: every design tool has a button and a form. A spur gear from its defaults with Enter, a frame along four picked sketch lines, a brick kit built from a picked block with the rods and profiles switched off, and a print analysis computed on it."
+ },
+ {
+  "click": {
+   "tab": "3DEEE"
+  }
+ },
+ {
+  "expect": {
+   "shown_handles": [
+    "panel:3DEEE:GEARS",
+    "button:design.spur_gear",
+    "panel:3DEEE:PARTS",
+    "panel:3DEEE:CALCULATE"
+   ]
+  }
+ },
+ {
+  "start": "design.spur_gear"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "SPUR GEAR",
+    "Module (mm)",
+    "Teeth",
+    "OK"
+   ]
+  }
+ },
+ {
+  "widget": "20",
+  "near": "Teeth"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "24"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "key": "Enter"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 1,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "sketch.create",
+   "params": {
+    "plane": "XY"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      100,
+      100
+     ],
+     [
+      400,
+      100
+     ],
+     [
+      400,
+      300
+     ],
+     [
+      100,
+      300
+     ]
+    ],
+    "closed": true
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "sketch.finish",
+   "params": {}
+  }
+ },
+ {
+  "start": "design.frame"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "FRAME",
+    "Sketch lines",
+    "Profile"
+   ]
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "top"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "click": {
+   "world": [
+    250,
+    100,
+    0
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    400,
+    200,
+    0
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    250,
+    300,
+    0
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    100,
+    200,
+    0
+   ]
+  }
+ },
+ {
+  "key": "Enter"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 5,
+   "errors": 0,
+   "bbox": {
+    "body": "Frame member 1",
+    "min": [
+     80,
+     80,
+     -20
+    ],
+    "max": [
+     420,
+     120,
+     20
+    ]
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 32,
+    "width": 16,
+    "height": 19.2,
+    "corner": [
+     600,
+     0,
+     0
+    ],
+    "body_name": "Block"
+   }
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "start": "construct.brickify"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "BRICKIFY",
+    "Bricks",
+    "T-slot profiles for straight runs",
+    "Threaded rods for tall columns",
+    "Build"
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    616,
+    8,
+    19.2
+   ]
+  }
+ },
+ {
+  "widget": "T-slot profiles for straight runs"
+ },
+ {
+  "widget": "Threaded rods for tall columns"
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Coverage",
+    "Brick 2x4",
+    "Brick 2x2"
+   ],
+   "bodies": 7,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_3deee_brickify"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.print"
+ },
+ {
+  "click": {
+   "world": [
+    616,
+    8,
+    19.2
+   ]
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Watertight",
+    "Layers",
+    "Verdict"
+   ],
+   "bodies": 7
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 7,
+   "errors": 0
+  }
+ }
+]

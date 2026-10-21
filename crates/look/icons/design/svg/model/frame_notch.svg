@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Notch</title>
+  <path d="M12.51 32L41.74 48.88L41.74 56.75L12.51 39.88Z" fill="#b8c3cf"/>
+  <path d="M51.49 43.25L41.74 48.88L41.74 56.75L51.49 51.12Z" fill="#8e9faf"/>
+  <path d="M22.26 26.38L51.49 43.25L41.74 48.88L12.51 32Z" fill="#e2e8ef"/>
+  <path d="M22.26 26.38L51.49 43.25L51.49 51.12L41.74 56.75L12.51 39.88L12.51 32Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M12.51 32L41.74 48.88L51.49 43.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M41.74 48.88L41.74 56.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 46.62L16.41 51.12L16.41 59L8.62 54.5Z" fill="#b8c3cf"/>
+  <path d="M31.03 42.69L16.41 51.12L16.41 59L31.03 50.56Z" fill="#8e9faf"/>
+  <path d="M23.23 38.19L31.03 42.69L16.41 51.12L8.62 46.62Z" fill="#e2e8ef"/>
+  <path d="M23.23 38.19L31.03 42.69L31.03 50.56L16.41 59L8.62 54.5L8.62 46.62Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 46.62L16.41 51.12L31.03 42.69" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M16.41 51.12L16.41 59" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23.23 38.19L31.03 42.69L27.13 52.81L19.33 48.31Z" fill="#b9ddf8"/>
+  <path d="M23.23 38.19L31.03 42.69L27.13 52.81L19.33 48.31Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M31.03 42.69L27.13 52.81" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

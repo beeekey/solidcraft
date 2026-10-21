@@ -1,0 +1,261 @@
+[
+ {
+  "note": "Stress Analysis from the toolbar: a bar picked as body, fixed face and load face, the force typed, Compute; then two bars in sliding contact pulled apart."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 100,
+    "width": 10,
+    "height": 10,
+    "body_name": "Bar"
+   }
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "start": "inspect.stress"
+ },
+ {
+  "expect": {
+   "dialog": "Stress"
+  }
+ },
+ {
+  "click": {
+   "world": [
+    50,
+    5,
+    10
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 1
+  }
+ },
+ {
+  "click": {
+   "world": [
+    100,
+    5,
+    5
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 2
+  }
+ },
+ {
+  "click": {
+   "world": [
+    50,
+    0,
+    5
+   ]
+  }
+ },
+ {
+  "widget": "-100",
+  "near": "Force Z (N)"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "-200"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "click": {
+   "handle": "stress:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Stress",
+   "widgets": [
+    "Peak stress",
+    "Displacement",
+    "MPa",
+    "Mesh"
+   ],
+   "bodies": 1
+  }
+ },
+ {
+  "shot": "tools_stress_one_body"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 40,
+    "width": 10,
+    "height": 10,
+    "corner": [
+     100,
+     0,
+     0
+    ],
+    "operation": "new",
+    "body_name": "Right"
+   }
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "start": "inspect.stress"
+ },
+ {
+  "click": {
+   "world": [
+    50,
+    5,
+    10
+   ]
+  }
+ },
+ {
+  "click": {
+   "world": [
+    120,
+    5,
+    10
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 1
+  }
+ },
+ {
+  "click": {
+   "world": [
+    50,
+    0,
+    5
+   ]
+  }
+ },
+ {
+  "call": "ui.dialogInput",
+  "params": {
+   "index": 2
+  }
+ },
+ {
+  "click": {
+   "world": [
+    140,
+    7,
+    3
+   ]
+  }
+ },
+ {
+  "widget": "0",
+  "near": "Force X (N)"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "-1000"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "widget": "-100",
+  "near": "Force Z (N)"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "0"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "widget": "Bonded"
+ },
+ {
+  "widget": "Sliding contact"
+ },
+ {
+  "click": {
+   "handle": "stress:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Stress",
+   "widgets": [
+    "Contact",
+    "links",
+    "Peak stress"
+   ]
+  }
+ },
+ {
+  "shot": "tools_stress_contact"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "bodies": 2,
+   "errors": 0
+  }
+ }
+]

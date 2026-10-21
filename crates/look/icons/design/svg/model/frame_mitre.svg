@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Mitre</title>
+  <path d="M18.36 30.88L37.85 42.12L37.85 48.88L18.36 37.62Z" fill="#b8c3cf"/>
+  <path d="M43.69 38.75L37.85 42.12L37.85 48.88L43.69 45.5Z" fill="#8e9faf"/>
+  <path d="M24.21 27.5L43.69 38.75L37.85 42.12L18.36 30.88Z" fill="#e2e8ef"/>
+  <path d="M24.21 27.5L43.69 38.75L43.69 45.5L37.85 48.88L18.36 37.62L18.36 30.88Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M18.36 30.88L37.85 42.12L43.69 38.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M37.85 42.12L37.85 48.88" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M18.36 46.62L24.21 50L24.21 56.75L18.36 53.38Z" fill="#b8c3cf"/>
+  <path d="M43.69 38.75L24.21 50L24.21 56.75L43.69 45.5Z" fill="#8e9faf"/>
+  <path d="M37.85 35.38L43.69 38.75L24.21 50L18.36 46.62Z" fill="#e2e8ef"/>
+  <path d="M37.85 35.38L43.69 38.75L43.69 45.5L24.21 56.75L18.36 53.38L18.36 46.62Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M18.36 46.62L24.21 50L43.69 38.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24.21 50L24.21 56.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 38.75L43.69 38.75L43.69 45.5" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

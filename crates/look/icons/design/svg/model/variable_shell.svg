@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Variable shell</title>
+  <path d="M29.08 14.56L10.57 25.25L10.57 45.5L29.08 34.81Z" fill="#8e9faf"/>
+  <path d="M29.08 14.56L10.57 25.25L10.57 45.5L29.08 34.81Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M47.59 25.25L29.08 14.56L29.08 34.81L47.59 45.5Z" fill="#b8c3cf"/>
+  <path d="M47.59 25.25L29.08 14.56L29.08 34.81L47.59 45.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M59.28 25.25L32 41L32 61.25L59.28 45.5Z" fill="#8e9faf"/>
+  <path d="M59.28 25.25L32 41L32 61.25L59.28 45.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 41L4.72 25.25L4.72 45.5L32 61.25Z" fill="#b8c3cf"/>
+  <path d="M32 41L4.72 25.25L4.72 45.5L32 61.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 9.5L59.28 25.25L32 41L4.72 25.25ZM10.57 25.25L29.08 35.94L47.59 25.25L29.08 14.56Z" fill="#e2e8ef" fill-rule="evenodd"/>
+  <path d="M32 9.5L59.28 25.25L32 41L4.72 25.25ZM10.57 25.25L29.08 35.94L47.59 25.25L29.08 14.56Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd"/>
+  <path d="M10.57 43.25L29.08 53.94L47.59 43.25L29.08 32.56Z" fill="#8e9faf"/>
+  <path d="M10.57 43.25L29.08 53.94L47.59 43.25L29.08 32.56Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M29.08 14.56L47.59 25.25L47.59 43.25L29.08 32.56Z" fill="#b9ddf8"/>
+  <path d="M29.08 14.56L47.59 25.25L47.59 43.25L29.08 32.56Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M29.08 14.56L10.57 25.25L10.57 43.25L29.08 32.56Z" fill="#328bd3"/>
+  <path d="M29.08 14.56L10.57 25.25L10.57 43.25L29.08 32.56Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 9.5L29.08 14.56L10.57 25.25L4.72 25.25Z" fill="#328bd3"/>
+  <path d="M32 9.5L29.08 14.56L10.57 25.25L4.72 25.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

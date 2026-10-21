@@ -1,0 +1,302 @@
+[
+ {
+  "note": "Generative design: a strut study builds its best bracket, the check reads it back, the free-form field builds a second body, and the grain check judges a bamboo beam along its fibre."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "generative.study",
+   "params": {
+    "mounts": [
+     {
+      "box": {
+       "min": [
+        0,
+        0,
+        0
+       ],
+       "max": [
+        12,
+        40,
+        60
+       ]
+      },
+      "name": "wall"
+     }
+    ],
+    "loads": [
+     {
+      "box": {
+       "min": [
+        108,
+        0,
+        0
+       ],
+       "max": [
+        120,
+        40,
+        12
+       ]
+      },
+      "name": "tip",
+      "force_n": [
+       0,
+       0,
+       -1000
+      ]
+     }
+    ],
+    "design_space": {
+     "box": {
+      "min": [
+       0,
+       0,
+       0
+      ],
+      "max": [
+       120,
+       40,
+       60
+      ]
+     }
+    },
+    "material": "Steel",
+    "resolution": 14,
+    "population": 10,
+    "generations": 3,
+    "solutions": 2,
+    "seed": 7,
+    "free_nodes": 2,
+    "min_radius_mm": 3,
+    "max_radius_mm": 18,
+    "gravity": false,
+    "build": 0,
+    "name": "Bracket"
+   }
+  },
+  "result": {
+   "designs.0.feasible": true,
+   "designs.0.connected": true,
+   "built.name": "Bracket"
+  }
+ },
+ {
+  "expect": {
+   "bodies": 1,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "generative.check",
+   "params": {
+    "body": "Bracket",
+    "mounts": [
+     {
+      "box": {
+       "min": [
+        0,
+        0,
+        0
+       ],
+       "max": [
+        12,
+        40,
+        60
+       ]
+      },
+      "name": "wall"
+     }
+    ],
+    "loads": [
+     {
+      "box": {
+       "min": [
+        108,
+        0,
+        0
+       ],
+       "max": [
+        120,
+        40,
+        12
+       ]
+      },
+      "name": "tip",
+      "force_n": [
+       0,
+       0,
+       -1000
+      ]
+     }
+    ],
+    "material": "Steel",
+    "resolution": 20,
+    "cyclic": true,
+    "finish": "As forged"
+   }
+  },
+  "result": {
+   "body": "Bracket",
+   "fatigue.assessed": true
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "generative.free_form",
+   "params": {
+    "mounts": [
+     {
+      "box": {
+       "min": [
+        0,
+        0,
+        0
+       ],
+       "max": [
+        12,
+        40,
+        60
+       ]
+      },
+      "name": "wall"
+     }
+    ],
+    "loads": [
+     {
+      "box": {
+       "min": [
+        108,
+        0,
+        0
+       ],
+       "max": [
+        120,
+        40,
+        12
+       ]
+      },
+      "name": "tip",
+      "force_n": [
+       0,
+       0,
+       -1000
+      ]
+     }
+    ],
+    "design_space": {
+     "box": {
+      "min": [
+       0,
+       0,
+       0
+      ],
+      "max": [
+       120,
+       40,
+       60
+      ]
+     }
+    },
+    "material": "Steel",
+    "resolution": 16,
+    "iterations": 8,
+    "volume_fraction": 0.25,
+    "meet_target": false,
+    "gravity": false,
+    "name": "Field"
+   }
+  },
+  "result": {
+   "iterations": 8,
+   "built.name": "Field",
+   "grid.0": 16
+  }
+ },
+ {
+  "expect": {
+   "bodies": 2,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 100,
+    "width": 10,
+    "height": 10,
+    "corner": [
+     0,
+     100,
+     0
+    ],
+    "body_name": "Beam"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.fibre",
+   "params": {
+    "body": "Beam",
+    "fixed": [
+     0,
+     105,
+     5
+    ],
+    "load": [
+     100,
+     105,
+     5
+    ],
+    "force_n": [
+     2000,
+     0,
+     0
+    ],
+    "fibre": [
+     1,
+     0,
+     0
+    ],
+    "species": "Tonkin",
+    "resolution": 20
+   }
+  },
+  "result": {
+   "mode": "tension along the fibre",
+   "species": "Tonkin",
+   "grid.0": 20,
+   "worst_ratio": [
+    0.1,
+    0.001
+   ]
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "bodies": 3,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_generative"
+ }
+]

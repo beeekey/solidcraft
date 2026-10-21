@@ -1143,10 +1143,9 @@ fn hostile_params_never_panic() {
         "head_gap",
     ];
     // Commands are independent; worker threads take them one at a time (their costs vary a lot).
-    let ids: Vec<&str> = command_specs()
-        .iter()
-        .map(|spec| spec.id)
-        .filter(|id| !matches!(*id, "doc.open" | "file.save" | "file.save_as" | "file.export" | "file.save_mesh" | "sketch.export_dxf")) // file system side effects are covered by their own tests
+    let specs: Vec<&CommandSpec> = command_specs()
+        .into_iter()
+        .filter(|spec| !matches!(spec.id, "doc.open" | "file.save" | "file.save_as" | "file.export" | "file.save_mesh" | "sketch.export_dxf")) // file system side effects are covered by their own tests
         .collect();
     let next = std::sync::atomic::AtomicUsize::new(0);
     let threads = std::thread::available_parallelism().map_or(4, |n| n.get());
@@ -1155,7 +1154,8 @@ fn hostile_params_never_panic() {
             .map(|_| {
                 scope.spawn(|| {
                     let mut internal = Vec::new();
-                    while let Some(&id) = ids.get(next.fetch_add(1, std::sync::atomic::Ordering::Relaxed)) {
+                    while let Some(spec) = specs.get(next.fetch_add(1, std::sync::atomic::Ordering::Relaxed)) {
+                        let id = spec.id;
                         // A model with a sketch, a body and an active sketch, so most commands get far.
                         // Built once per command and copied for each call: SMLib serialises every
                         // call behind one lock, so building the box for each of the ~3000 calls
@@ -1165,6 +1165,14 @@ fn hostile_params_never_panic() {
                         let _ = start.execute("sketch.create", &json!({"plane": "XY"}));
                         let _ = start.execute("sketch.rectangle.two_point", &json!({"p0": [0, 0], "p1": [5, 5]}));
                         for v in hostile_values() {
+                            // Whole-value hostility.
+                            if let Err(EngineError::Internal(id, msg)) = copy_with_history(&start).execute(id, &v) {
+                                internal.push(format!("{id} {v}: {msg}"));
+                            }
+                            // A command reads only the keys it documents, so every key it does not
+                            // runs it the same way: one of those keys stands for them all (the
+                            // generators and analyses run their full job on every call).
+                            let mut undocumented = false;
                             for k in keys {
                                 if k == "path"
                                     && (id.starts_with("parameters.")
@@ -1176,14 +1184,15 @@ fn hostile_params_never_panic() {
                                 {
                                     continue; // parameter, script and export files: covered by their own tests (no stray files)
                                 }
-                                let mut s = copy_with_history(&start);
-                                let p = json!({ k: v.clone() });
-                                if let Err(EngineError::Internal(id, msg)) = s.execute(id, &p) {
-                                    internal.push(format!("{id} {p}: {msg}"));
+                                if !spec.params.contains(k) {
+                                    if undocumented {
+                                        continue;
+                                    }
+                                    undocumented = true;
                                 }
-                                // Whole-value hostility too.
-                                if let Err(EngineError::Internal(id, msg)) = s.execute(id, &v) {
-                                    internal.push(format!("{id} {v}: {msg}"));
+                                let p = json!({ k: v.clone() });
+                                if let Err(EngineError::Internal(id, msg)) = copy_with_history(&start).execute(id, &p) {
+                                    internal.push(format!("{id} {p}: {msg}"));
                                 }
                             }
                         }

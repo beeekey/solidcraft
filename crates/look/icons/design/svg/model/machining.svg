@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Machining analysis</title>
+  <path d="M4.72 36.5L32 52.25L32 61.25L4.72 45.5Z" fill="#b8c3cf"/>
+  <path d="M59.28 36.5L32 52.25L32 61.25L59.28 45.5Z" fill="#8e9faf"/>
+  <path d="M32 20.75L59.28 36.5L32 52.25L4.72 36.5Z" fill="#e2e8ef"/>
+  <path d="M32 20.75L59.28 36.5L59.28 45.5L32 61.25L4.72 45.5L4.72 36.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M4.72 36.5L32 52.25L59.28 36.5" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 52.25L32 61.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 27.5L43.69 34.25L30.05 42.12L18.36 35.38Z" fill="#8e9faf"/>
+  <path d="M32 27.5L43.69 34.25L30.05 42.12L18.36 35.38Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M43.18 14.5L43.18 36.5A4.41 2.55 0 0 0 52 36.5L52 14.5Z" fill="#328bd3"/>
+  <path d="M49.13 14.5L49.13 38.88A4.41 2.55 0 0 0 52 36.5L52 14.5Z" fill="#236ead"/>
+  <path d="M43.18 14.5L43.18 36.5A4.41 2.55 0 0 0 52 36.5L52 14.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M43.18 14.5A4.41 2.55 0 1 0 52 14.5A4.41 2.55 0 1 0 43.18 14.5Z" fill="#b9ddf8" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M43.18 18.5Q47.59 22.5 52 18.5" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M43.18 24.5Q47.59 28.5 52 24.5" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M43.18 30.5Q47.59 34.5 52 30.5" fill="none" stroke="#34465b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

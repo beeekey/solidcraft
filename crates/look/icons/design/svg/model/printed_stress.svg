@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Printed stress</title>
+  <path d="M10.57 29.75L32 42.12L32 57.88L10.57 45.5Z" fill="#b8c3cf"/>
+  <path d="M53.43 29.75L32 42.12L32 57.88L53.43 45.5Z" fill="#8e9faf"/>
+  <path d="M32 17.38L53.43 29.75L32 42.12L10.57 29.75Z" fill="#e2e8ef"/>
+  <path d="M32 17.38L53.43 29.75L53.43 45.5L32 57.88L10.57 45.5L10.57 29.75Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 29.75L32 42.12L53.43 29.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 42.12L32 57.88" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 42.35L32 54.73L53.43 42.35" fill="none" stroke="#34465b" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 39.2L32 51.58L53.43 39.2" fill="none" stroke="#34465b" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 36.05L32 48.42L53.43 36.05" fill="none" stroke="#34465b" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 32.9L32 45.27L53.43 32.9" fill="none" stroke="#34465b" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 36.05L32 48.42" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10.57 36.05L32 48.42" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 2.5"/>
+  <path d="M32 11.75L32 20.06" fill="none" stroke="#ffffff" stroke-width="6.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 28.06L27.5 19.06L36.5 19.06Z" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 11.75L32 20.06" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 28.06L27.5 19.06L36.5 19.06Z" fill="#236ead"/>
+</svg>

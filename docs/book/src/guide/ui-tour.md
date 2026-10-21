@@ -24,9 +24,12 @@ view.
   folder (see [Troubleshooting](troubleshooting.md#reset-the-settings)) and restart; `app` (the
   default) puts the application bar back.
 - **Toolbar.** The workspace switcher (DESIGN) sits on the left. The tabs (MODEL, SURFACE,
-  ASSEMBLE, INSERT, INSPECT, MANAGE, VIEW and SHEET METAL) hold sections of commands. SKETCH appears while
+  ASSEMBLE, INSERT, INSPECT, MANAGE, 3DEEE, VIEW and SHEET METAL) hold sections of commands. SKETCH appears while
   editing a sketch; SHEET METAL is always there and is highlighted for the active sheet body. Both select automatically
-  when entered, and the other tabs remain available. Click a
+  when entered, and the other tabs remain available.
+  The 3DEEE tab holds the design tools: gears and worm drives, drive parts, plastic and bamboo
+  parts, frames, pipes, welds and lattices, generative design, the print and machining checks,
+  the calculators and Trace Canvas, each with a form that opens filled with values that build. Click a
   panel's name for all its commands. With **Switch panel menus on hover** enabled in
   **Preferences > Layout > Toolbar tabs**, click once to open a menu, then hover another
   panel's name to switch. Move outside the ribbon and open menu to close it.

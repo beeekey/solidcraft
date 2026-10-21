@@ -1260,6 +1260,9 @@ fn ui_at(app: &mut SolveApp, at: params::At) -> Outcome {
             return shown(crate::scenario::handle_at(&format!("{control}:occurrence:{key}")), "occurrence row or control is not shown".into());
         }
         At::Handle(h) => return shown(crate::scenario::handle_at(&h), format!("handle {h} is not shown")),
+        At::Tab(t) => {
+            return shown(crate::scenario::rect_of(&format!("toolbar_tab:{t}")).map(|r| r.center()), format!("no toolbar tab `{t}` on screen"));
+        }
         At::Browser { label, chevron } => {
             let rows = crate::browser::drawn_rows();
             let row = rows.iter().find(|r| r.0 == label);

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Blend boolean</title>
+  <path d="M8.62 29.75L32 43.25L32 59L8.62 45.5Z" fill="#b8c3cf"/>
+  <path d="M55.38 29.75L32 43.25L32 59L55.38 45.5Z" fill="#8e9faf"/>
+  <path d="M32 16.25L55.38 29.75L32 43.25L8.62 29.75Z" fill="#e2e8ef"/>
+  <path d="M32 16.25L55.38 29.75L55.38 45.5L32 59L8.62 45.5L8.62 29.75Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 29.75L32 43.25L55.38 29.75" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 43.25L32 59" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M19.9 31.75Q26.9 28.75 26.9 19.75L44.9 19.75Q44.9 28.75 51.9 31.75Z" fill="#b9ddf8"/>
+  <path d="M19.9 31.75Q26.9 28.75 26.9 19.75L44.9 19.75Q44.9 28.75 51.9 31.75Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="35.9" cy="16.75" r="10" fill="#328bd3" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M44.56 21.75A10 10 0 0 1 27.24 21.75L35.9 16.75Z" fill="#236ead"/>
+  <circle cx="35.9" cy="16.75" r="10" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,93 @@
+[
+ {
+  "note": "Plastic and bamboo parts: a snap hook, a heat-set insert boss and a bamboo culm with two nodes."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.snap_hook",
+   "params": {
+    "width": 6,
+    "arm_length": 20,
+    "thickness": 2,
+    "hook_depth": 1.5,
+    "hook_length": 3
+   }
+  }
+ },
+ {
+  "expect": {
+   "bodies": 1,
+   "errors": 0,
+   "volume": [
+    289.5,
+    0.0001
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.insert_boss",
+   "params": {
+    "size": "M3",
+    "height": 10
+   }
+  },
+  "result": {
+   "hole_diameter_mm": 4
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.bamboo_culm",
+   "params": {
+    "length": 500,
+    "butt_diameter": 32,
+    "tip_diameter": 28,
+    "butt_wall": 8,
+    "tip_wall": 7,
+    "node_spacing": 250,
+    "first_node": 125
+   }
+  },
+  "result": {
+   "nodes": 2
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "bodies": 3,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_plastic_bamboo"
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.bamboo_culm",
+   "params": {
+    "length": 500,
+    "butt_diameter": 28,
+    "tip_diameter": 32,
+    "butt_wall": 8
+   }
+  },
+  "fail": true
+ }
+]

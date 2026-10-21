@@ -19,6 +19,8 @@ pub mod bom_panel;
 pub mod browser;
 pub mod browser_canvas;
 pub mod browser_prompts;
+#[cfg(test)]
+mod calc_ui_tests;
 pub mod canvas;
 pub mod cli_link;
 #[cfg(test)]
@@ -41,8 +43,10 @@ pub(crate) mod dialog_tree;
 pub mod dialogs;
 pub mod dialogs_appearance;
 pub mod dialogs_assembly;
+pub mod dialogs_calc;
 pub mod dialogs_coupling;
 pub mod dialogs_end_cap;
+pub mod dialogs_flow;
 pub mod dialogs_frame;
 mod dialogs_hole;
 pub mod dialogs_insert_drawing;
@@ -54,9 +58,12 @@ pub mod dialogs_parts;
 pub mod dialogs_plastic;
 pub mod dialogs_save_mesh;
 pub mod dialogs_sheet;
+pub mod dialogs_stress;
 pub mod dialogs_surface;
 pub mod dialogs_sweep;
+pub mod dialogs_thermal;
 mod dialogs_thread;
+pub mod dialogs_tools;
 pub mod dialogs_view_dxf;
 pub mod dim_view;
 #[cfg(test)]
@@ -70,6 +77,8 @@ pub mod easyprint_ui;
 pub mod edit_clipboard;
 pub mod edit_in_place;
 mod feature_edit;
+#[cfg(test)]
+mod flow_ui_tests;
 #[cfg(test)]
 mod font_literals_tests;
 pub mod fonts;
@@ -141,9 +150,13 @@ mod prompt_cards_tests;
 #[cfg(test)]
 mod scale_tests;
 #[cfg(test)]
+mod stress_ui_tests;
+#[cfg(test)]
 mod surface_clamp_tests;
 #[cfg(test)]
 mod surface_errors_tests;
+#[cfg(test)]
+mod thermal_ui_tests;
 #[cfg(test)]
 mod timeline_dependents_tests;
 #[cfg(test)]
