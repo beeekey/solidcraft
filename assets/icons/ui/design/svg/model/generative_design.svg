@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Generative design</title>
+  <path d="M25.18 32.56L54.41 49.44L38.82 58.44L9.59 41.56Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <path d="M24.21 29.75L26.15 35.38L26.15 41L24.21 35.38Z" fill="#236ead"/>
+  <path d="M24.21 29.75L26.15 35.38L26.15 41L24.21 35.38Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24.21 36.5L14.46 35.38L14.46 41L24.21 42.12Z" fill="#236ead"/>
+  <path d="M24.21 36.5L14.46 35.38L14.46 41L24.21 42.12Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M27.13 42.69L24.21 36.5L24.21 42.12L27.13 48.31Z" fill="#328bd3"/>
+  <path d="M27.13 42.69L24.21 36.5L24.21 42.12L27.13 48.31Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M37.85 44.38L27.13 42.69L27.13 48.31L37.85 50Z" fill="#328bd3"/>
+  <path d="M37.85 44.38L27.13 42.69L27.13 48.31L37.85 50Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M49.54 44.38L39.79 50L39.79 55.62L49.54 50Z" fill="#236ead"/>
+  <path d="M49.54 44.38L39.79 50L39.79 55.62L49.54 50Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M39.79 50L37.85 44.38L37.85 50L39.79 55.62Z" fill="#328bd3"/>
+  <path d="M39.79 50L37.85 44.38L37.85 50L39.79 55.62Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24.21 29.75L26.15 35.38L36.87 37.06L39.79 43.25L49.54 44.38L39.79 50L37.85 44.38L27.13 42.69L24.21 36.5L14.46 35.38Z" fill="#b9ddf8" fill-rule="evenodd"/>
+  <path d="M24.21 29.75L26.15 35.38L36.87 37.06L39.79 43.25L49.54 44.38L39.79 50L37.85 44.38L27.13 42.69L24.21 36.5L14.46 35.38Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd"/>
+  <path d="M14.37 28.56L14.37 32.56A4.96 2.86 0 0 0 24.29 32.56L24.29 28.56Z" fill="#b8c3cf"/>
+  <path d="M21.07 28.56L21.07 35.25A4.96 2.86 0 0 0 24.29 32.56L24.29 28.56Z" fill="#8e9faf"/>
+  <path d="M14.37 28.56L14.37 32.56A4.96 2.86 0 0 0 24.29 32.56L24.29 28.56Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14.37 28.56A4.96 2.86 0 1 0 24.29 28.56A4.96 2.86 0 1 0 14.37 28.56Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M39.71 43.19L39.71 47.19A4.96 2.86 0 0 0 49.63 47.19L49.63 43.19Z" fill="#b8c3cf"/>
+  <path d="M46.4 43.19L46.4 49.87A4.96 2.86 0 0 0 49.63 47.19L49.63 43.19Z" fill="#8e9faf"/>
+  <path d="M39.71 43.19L39.71 47.19A4.96 2.86 0 0 0 49.63 47.19L49.63 43.19Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M39.71 43.19A4.96 2.86 0 1 0 49.63 43.19A4.96 2.86 0 1 0 39.71 43.19Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

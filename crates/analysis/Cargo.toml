@@ -1,0 +1,14 @@
+[package]
+name = "solidcraft-analysis"
+description = "SolidCraft analysis: a native voxel finite-element solver (static stress, buckling, contact) on triangle meshes, with no modelling-kernel dependency"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+solidcraft-geom = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }

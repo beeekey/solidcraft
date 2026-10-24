@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Hole compensation</title>
+  <path d="M6 30L32 45.01L32 49.01L6 34Z" fill="#b8c3cf"/>
+  <path d="M58 30L32 45.01L32 49.01L58 34Z" fill="#8e9faf"/>
+  <path d="M32 14.99L58 30L32 45.01L6 30Z" fill="#e2e8ef"/>
+  <path d="M32 14.99L58 30L58 34L32 49.01L6 34L6 30Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6 30L32 45.01L58 30" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 45.01L32 49.01" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23.42 30A8.58 4.95 0 1 0 40.58 30A8.58 4.95 0 1 0 23.42 30Z" fill="#8e9faf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M19.13 30A12.87 7.43 0 1 0 44.87 30A12.87 7.43 0 1 0 19.13 30Z" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3.5 3"/>
+  <path d="M33.82 31.05L37.64 33.25" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M41.1 35.25L35.52 34.92L38.02 30.59Z" fill="#236ead"/>
+  <path d="M30.18 31.05L26.36 33.25" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22.9 35.25L25.98 30.59L28.48 34.92Z" fill="#236ead"/>
+  <path d="M30.18 28.95L26.36 26.74" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22.9 24.74L28.48 25.08L25.98 29.41Z" fill="#236ead"/>
+  <path d="M33.82 28.95L37.64 26.74" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M41.1 24.74L38.02 29.41L35.52 25.08Z" fill="#236ead"/>
+</svg>

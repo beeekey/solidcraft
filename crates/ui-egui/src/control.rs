@@ -565,6 +565,13 @@ fn dispatch(app: &mut SolveApp, ctx: &egui::Context, method: &str, p: &Value) ->
             }
             // A scenario point: {world: [x,y,z]} | {sketch: [x,y]} | {plane: "XY"} (the middle of an
             // origin plane's square) → screen point.
+            if let Some(tab) = p.get("tab").and_then(Value::as_str) {
+                // A toolbar tab by its name ("3DEEE").
+                return match crate::scenario::rect_of(&format!("toolbar_tab:{tab}")) {
+                    Some(r) => ok(json!([r.center().x, r.center().y])),
+                    None => err(format!("no toolbar tab `{tab}` on screen")),
+                };
+            }
             if let Some(h) = p.get("handle").and_then(Value::as_str) {
                 return match crate::scenario::handle_at(h) {
                     Some(q) => ok(json!([q.x, q.y])),

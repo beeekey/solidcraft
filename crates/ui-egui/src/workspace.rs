@@ -4,7 +4,7 @@
 use solidcraft_engine::CommandSpec;
 use solidcraft_engine::doc::FeatureKind;
 
-pub const TABS: &[&str] = &["MODEL", "SURFACE", "ASSEMBLE", "INSERT", "INSPECT", "MANAGE", "VIEW"];
+pub const TABS: &[&str] = &["MODEL", "SURFACE", "ASSEMBLE", "INSERT", "INSPECT", "MANAGE", "3DEEE", "VIEW"];
 
 /// Reading order of the compact, three-column constraint gallery. Icons come from each spec.
 pub const CONSTRAINT_GALLERY: &[&str] = &[
@@ -259,6 +259,17 @@ pub const SECTIONS: &[Section] = &[
     Section { tab: "SHEET METAL", panel: "OUTPUT", promoted: 2, ids: &["sheet.export_dxf", "sheet.export_bend_table"] },
     Section { tab: "SHEET METAL", panel: "RULES", promoted: 1, ids: &["sheet.manage_rules"] },
     Section { tab: "SHEET METAL", panel: "CONFIGURE", promoted: 2, ids: CONFIGURE },
+    // The design tools: generators, structures, lattices, generative design, the manufacturing
+    // checks, the calculators and tracing, each with a dialog built from its parameter list. The
+    // commands come from their registry placement (`.at("3DEEE", panel)`) in registry order.
+    Section { tab: "3DEEE", panel: "GEARS", promoted: 3, ids: &[] },
+    Section { tab: "3DEEE", panel: "DRIVE", promoted: 3, ids: &[] },
+    Section { tab: "3DEEE", panel: "PARTS", promoted: 2, ids: &[] },
+    Section { tab: "3DEEE", panel: "STRUCTURE", promoted: 3, ids: &[] },
+    Section { tab: "3DEEE", panel: "GENERATIVE", promoted: 2, ids: &[] },
+    Section { tab: "3DEEE", panel: "MAKE", promoted: 4, ids: &[] },
+    Section { tab: "3DEEE", panel: "CALCULATE", promoted: 2, ids: &[] },
+    Section { tab: "3DEEE", panel: "TRACE", promoted: 1, ids: &[] },
     Section { tab: "RENDER", panel: "SCENE", promoted: 2, ids: &["render.scene"] },
     Section { tab: "RENDER", panel: "IMAGE", promoted: 1, ids: &["render.start"] },
 ];
@@ -267,6 +278,7 @@ pub const SECTIONS: &[Section] = &[
 /// retain the engine label. Route these through `tr_label`, like other UI labels.
 pub const RIBBON_LABELS: &[(&str, &str)] = &[
     ("appearance.assign", "Appearance"),
+    ("canvas.remove_background", "Background"),
     ("component.capture_position", "Capture Pos."),
     ("component.create", "New Comp."),
     ("component.from_bodies", "From Bodies"),
@@ -274,8 +286,10 @@ pub const RIBBON_LABELS: &[(&str, &str)] = &[
     ("component.properties", "Properties"),
     ("component.revert_position", "Revert Pos."),
     ("config.table", "Config Table"),
+    ("construct.topology_optimize", "Topology Opt."),
     ("contact.check", "Contact"),
     ("contact.enable_sets", "Contact Sets"),
+    ("design.insert_boss", "Insert Boss"),
     ("document.inspect", "Inspect"),
     ("document.units", "Units"),
     ("inspect.accessibility", "Access"),
@@ -285,7 +299,12 @@ pub const RIBBON_LABELS: &[(&str, &str)] = &[
     ("inspect.draft", "Draft"),
     ("inspect.interference", "Interference"),
     ("inspect.isocurve", "Isocurve"),
+    ("inspect.machining", "Machining"),
+    ("inspect.print", "Print Check"),
+    ("inspect.print_orient", "Orientation"),
+    ("inspect.printed_stress", "Print Stress"),
     ("inspect.section", "Section"),
+    ("inspect.thread_engagement", "Engagement"),
     ("inspect.zebra", "Zebra"),
     ("joint.as_built", "As-Built"),
     ("material.assign", "Material"),
@@ -349,6 +368,14 @@ pub const PLACEMENTS: &[(&str, &str, &str, &str)] = &[
     ("PLASTIC", "CREATE", "MODEL", "CREATE"),
     ("PLASTIC", "SETUP", "MANAGE", "RULES"),
     ("MESH", "MODIFY", "INSERT", "FILES"),
+    ("3DEEE", "GEARS", "3DEEE", "GEARS"),
+    ("3DEEE", "DRIVE", "3DEEE", "DRIVE"),
+    ("3DEEE", "PARTS", "3DEEE", "PARTS"),
+    ("3DEEE", "STRUCTURE", "3DEEE", "STRUCTURE"),
+    ("3DEEE", "GENERATIVE", "3DEEE", "GENERATIVE"),
+    ("3DEEE", "MAKE", "3DEEE", "MAKE"),
+    ("3DEEE", "CALCULATE", "3DEEE", "CALCULATE"),
+    ("3DEEE", "TRACE", "3DEEE", "TRACE"),
     ("RENDER", "SCENE", "RENDER", "SCENE"),
     ("RENDER", "IMAGE", "RENDER", "IMAGE"),
 ];

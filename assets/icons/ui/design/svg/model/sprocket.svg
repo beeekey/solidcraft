@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Sprocket</title>
+  <path d="M49 32L48.86 34.18L55.1 36.32L53.77 40.85L47.36 39.28L46.3 41.19L45.01 42.95L49.09 48.13L45.53 51.21L40.99 46.43L39.06 47.46L37.02 48.24L37.66 54.81L32.99 55.48L31.76 49L29.58 48.83L27.44 48.38L24.43 54.25L20.14 52.29L22.61 46.17L20.87 44.85L19.31 43.31L13.61 46.63L11.06 42.66L16.44 38.84L15.69 36.79L15.21 34.66L8.62 34.36L8.62 29.64L15.21 29.34L15.69 27.21L16.44 25.16L11.06 21.34L13.61 17.37L19.31 20.69L20.87 19.15L22.61 17.83L20.14 11.71L24.43 9.75L27.44 15.62L29.58 15.17L31.76 15L32.99 8.52L37.66 9.19L37.02 15.76L39.06 16.54L40.99 17.57L45.53 12.79L49.09 15.87L45.01 21.05L46.3 22.81L47.36 24.72L53.77 23.15L55.1 27.68L48.86 29.82Z" fill="#b8c3cf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="10" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="32" cy="25.5" r="2.2" fill="#ffffff" stroke="#34465b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="38.18" cy="29.99" r="2.2" fill="#ffffff" stroke="#34465b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="35.82" cy="37.26" r="2.2" fill="#ffffff" stroke="#34465b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="28.18" cy="37.26" r="2.2" fill="#ffffff" stroke="#34465b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="25.82" cy="29.99" r="2.2" fill="#ffffff" stroke="#34465b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="3.2" fill="#b9ddf8" stroke="#236ead" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

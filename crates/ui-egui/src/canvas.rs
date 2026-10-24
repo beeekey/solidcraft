@@ -299,6 +299,16 @@ pub fn show(app: &mut SolveApp, ui: &mut egui::Ui, painter: &egui::Painter, proj
         app.dialog = Some(d);
         return;
     }
+    if let Kind::Stress(f) = &d.kind {
+        crate::dialogs_stress::overlay(painter, proj, f);
+        app.dialog = Some(d);
+        return;
+    }
+    if let Kind::Thermal(f) = &d.kind {
+        crate::dialogs_thermal::overlay(painter, proj, f);
+        app.dialog = Some(d);
+        return;
+    }
     // Move: the triad at the pivot; dragging it sets the distances and angles. Its value box
     // sits beside it and reads the move's main value, so a drag shows its number and typing
     // one sets it. The triad is the manipulator here, so the box comes without the drag arrow
