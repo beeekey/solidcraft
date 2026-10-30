@@ -14,7 +14,8 @@
 //!   agent's arrive (through the app's request queue, answered between frames, so the agent
 //!   cursor can act it out first); fails if the answer came in fewer than `min_frames` frames
 //! - `{"call": "ui.view", "params": {…}}`: any other control request (`fail: true` expects an
-//!   error)
+//!   error; `"result": {"path.to.key": value}` checks the answer, numbers within 1e-6 relative
+//!   or `[value, tolerance]`)
 //! - `{"make_image": "pic.png"}`: a picture in the scenario's folder
 //! - `{"choose_file": "part.step"}`: the next Open picker returns that file of the scenario's
 //!   folder (Save pickers save there)
@@ -27,6 +28,7 @@
 //! - AT may also be `{"plane": "XY"}` (the middle of an origin plane's square), `{"axis": "Z"}`,
 //!   `{"dimension": "d1"}`, `{"handle": "arrow"}` (a manipulator handle: see [`publish_handle`]),
 //!   `{"browser": "Bodies"}` (a browser row by its label) or `{"chevron": "Bodies"}` (its fold arrow)
+//!   or `{"tab": "3DEEE"}` (a toolbar tab)
 //! - `{"autosave": true}`: autosave into the scenario's recovery folder; `{"restart": "crash" |
 //!   "close"}`: the app dies (or closes) and a new one starts on the same folders
 //! - `{"script": "examples/…/x.json"}`: run a command script through the engine; `"$DIR"` in a
@@ -346,12 +348,27 @@ impl Harness {
         self.widgets(text).into_iter().next()
     }
 
-    /// The widget showing `text` nearest the label `near` (the field in a label's row).
+    /// Every visible widget's label or value (a dialog's rows, buttons and fields).
+    pub fn widget_texts(&self) -> Vec<String> {
+        let Some(tree) = self.output.accesskit_update.as_ref() else { return Vec::new() };
+        tree.nodes
+            .iter()
+            .filter(|(_, n)| n.bounds().is_some_and(|b| b.x1 > b.x0 && b.y1 > b.y0))
+            .flat_map(|(_, n)| [n.label().map(str::to_string), n.value().map(str::to_string)])
+            .flatten()
+            .collect()
+    }
+
+    /// The widget showing `text` nearest the label `near` (the field in a label's row). A field
+    /// carries its row's label as its accessible name too, so the first match for `near` may be
+    /// the field itself: the label is the match with something showing `text` to its right.
     pub fn widget_near(&self, text: &str, near: &str) -> Option<[f64; 2]> {
-        let [lx, ly] = self.widgets(near).into_iter().next()?;
-        self.widgets(text).into_iter().filter(|[x, _]| *x > lx).min_by(|a, b| {
-            let d = |p: &[f64; 2]| (p[1] - ly).abs() * 4.0 + (p[0] - lx).abs();
-            d(a).total_cmp(&d(b))
+        let shown = self.widgets(text);
+        self.widgets(near).into_iter().find_map(|[lx, ly]| {
+            shown.iter().filter(|[x, _]| *x > lx).copied().min_by(|a, b| {
+                let d = |p: &[f64; 2]| (p[1] - ly).abs() * 4.0 + (p[0] - lx).abs();
+                d(a).total_cmp(&d(b))
+            })
         })
     }
 
@@ -657,6 +674,21 @@ impl Harness {
         if failed != flag("fail") {
             return Err(format!("{s}: {res}"));
         }
+        // `result`: what the answer must hold, by dotted path ("joints.mitred", "designs.0.mass_g").
+        for (path, want) in s.get("result").and_then(Value::as_object).into_iter().flatten() {
+            let got = path.split('.').fold(&res["result"], |at, k| match k.parse::<usize>() {
+                Ok(i) if at.is_array() => &at[i],
+                _ => &at[k],
+            });
+            let ok = match (got.as_f64(), want) {
+                (Some(g), Value::Number(w)) => (g - w.as_f64().unwrap_or(f64::NAN)).abs() <= 1e-6 * w.as_f64().unwrap_or(0.0).abs().max(1.0),
+                (Some(g), Value::Array(a)) if a.len() == 2 && a.iter().all(Value::is_number) => approx(g, want, path).is_ok(),
+                _ => got == want,
+            };
+            if !ok {
+                return Err(format!("{s}: result {path} is {got}, want {want} (answer {})", res["result"]));
+            }
+        }
         Ok(())
     }
 
@@ -682,7 +714,8 @@ fn approx(got: f64, want: &Value, what: &str) -> Result<(), String> {
 /// open, or a word its kind must contain), `tool` (null or command id), `status` (null, or a
 /// substring of the status line), `sketching` (bool),
 /// `selection` (count), `glyphs` ({constraint id: count}, none overlapping one another or a dimension value), `param` ({name: value}), `sketch_status` (solved|…), `dof`, `query`
-/// ({command, params?, path, value}: a command's result).
+/// ({command, params?, path, value}: a command's result), `widgets` / `no_widgets` (texts some
+/// visible widget's label or value contains, or none does: a dialog's result rows).
 pub fn check(h: &mut Harness, e: &Value) -> Result<(), String> {
     let doc = h.call("document.inspect", json!({"measure": true}))["result"].clone();
     let ui = h.call("ui.inspect", json!({}))["result"].clone();
@@ -892,6 +925,16 @@ pub fn check(h: &mut Harness, e: &Value) -> Result<(), String> {
                 };
                 if !ok {
                     return Err(format!("dialog: got {d}, want {v}"));
+                }
+            }
+            "widgets" | "no_widgets" => {
+                // Texts shown (or not) by some widget on screen: a dialog's result rows.
+                let texts = h.widget_texts();
+                for want in v.as_array().into_iter().flatten().filter_map(Value::as_str) {
+                    let shown = texts.iter().any(|t| t.contains(want));
+                    if shown != (k == "widgets") {
+                        return Err(format!("widget `{want}` {}: on screen {texts:?}", if shown { "shown" } else { "missing" }));
+                    }
                 }
             }
             "tool" => {

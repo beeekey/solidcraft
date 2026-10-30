@@ -303,6 +303,14 @@ crate::dialog_descriptor::dialog_descriptors! {
                 /// own default (centre where a round item gives one).
                 show: Option<Shown>,
             },
+            /// Stress Analysis (see `dialogs_stress`): hold a body at one face, push on another.
+            Stress(Box<crate::dialogs_stress::StressForm>),
+            /// Thermal Analysis (see `dialogs_thermal`): watts in over a face, the part in still air.
+            Thermal(Box<crate::dialogs_thermal::ThermalForm>),
+            /// Flow Analysis (see `dialogs_flow`): the fluid through or around the part.
+            Flow(Box<crate::dialogs_flow::FlowForm>),
+            /// A design calculator (see `dialogs_calc`): numbers in, a verdict out.
+            Calculator(Box<crate::dialogs_calc::CalcForm>),
             /// Move bodies by a distance along X, Y and Z.
             /// Move/Copy (see `dialogs_move`): the move type, X/Y/Z distances (Point to Position: the
             /// target), X/Y/Z angles (Free Move) and the angle (Rotate).
@@ -923,6 +931,24 @@ impl Dialog {
             "inspect.section" => Dialog::new(
                 Kind::Section { offset: length_default(s, "0"), flip: false, hatch: true },
                 vec![SelInput::new("Plane", PLANES | PLANAR_FACES, false)],
+            ),
+            "inspect.flow" => Dialog::new(
+                Kind::Flow(Box::default()),
+                vec![SelInput::new("Body", BODIES, false), SelInput::new("Inlet face", FACES, false), SelInput::new("Outlet face", FACES, false)],
+            ),
+            "inspect.thermal" => Dialog::new(
+                Kind::Thermal(Box::default()),
+                vec![SelInput::new("Body", BODIES, false), SelInput::new("Heated face", FACES, false), SelInput::new("Held face", FACES, false)],
+            ),
+            calc if crate::dialogs_calc::CALCULATORS.contains(&calc) || crate::dialogs_tools::TOOLS.contains(&calc) => {
+                let mut form = crate::dialogs_calc::CalcForm::for_command(calc)?;
+                form.prefill(s);
+                let inputs = form.inputs();
+                Dialog::new(Kind::Calculator(Box::new(form)), inputs)
+            }
+            "inspect.stress" => Dialog::new(
+                Kind::Stress(Box::default()),
+                vec![SelInput::new("Bodies", BODIES, true), SelInput::new("Fixed face", FACES, false), SelInput::new("Load face", FACES, false)],
             ),
             "inspect.measure" => Dialog::new(
                 Kind::Measure { result: None, of: Vec::new(), show: None },
@@ -2207,6 +2233,10 @@ fn title(k: &Kind) -> &'static str {
         Kind::Fillet { chamfer: true, .. } => "CHAMFER",
         Kind::Mirror => "MIRROR",
         Kind::Measure { .. } => "MEASURE",
+        Kind::Stress(_) => "STRESS ANALYSIS",
+        Kind::Thermal(_) => "THERMAL ANALYSIS",
+        Kind::Flow(_) => "FLOW ANALYSIS",
+        Kind::Calculator(f) => f.title,
         Kind::Material { .. } => "PHYSICAL MATERIAL",
         Kind::Midplane => "MIDPLANE",
         Kind::MeshConvert { .. } => "CONVERT MESH",
@@ -3035,7 +3065,8 @@ pub(crate) fn card_width(d: &Dialog) -> f32 {
 /// says what it does.
 pub(crate) fn action_labels(kind: &Kind) -> (&'static str, &'static str) {
     match kind {
-        Kind::Measure { .. } => ("", "Close"),
+        Kind::Measure { .. } | Kind::Stress(_) | Kind::Thermal(_) | Kind::Flow(_) => ("", "Close"),
+        Kind::Calculator(f) if !f.apply => ("", "Close"),
         Kind::ConfirmDelete { .. } => ("Delete", "Cancel"),
         Kind::SaveMesh(k) => (crate::dialogs_save_mesh::button(k), "Cancel"),
         Kind::ViewDxf { .. } => ("Export DXF…", "Cancel"),
@@ -3146,7 +3177,8 @@ pub fn show(app: &mut SolveApp, ctx: &egui::Context) {
     let heading = if d.editing.is_some() { crate::i18n::format("dialog.edit_title", &[("title", tr(raw_title))]) } else { tr(raw_title).to_string() };
     let frame = crate::ui_kit::Panel::feature_frame(ctx, app.ui.layout, side);
     // OK is offered once the inputs make a feature.
-    let has_ok = !matches!(d.kind, Kind::Sketch | Kind::Measure { .. });
+    let has_ok = !matches!(&d.kind, Kind::Sketch | Kind::Measure { .. } | Kind::Stress(_) | Kind::Thermal(_) | Kind::Flow(_))
+        && !matches!(&d.kind, Kind::Calculator(f) if !f.apply);
     let valid = match &d.kind {
         Kind::Sketch => false,
         // Nothing picked is an answer too: OK empties the chat's tray.
@@ -3315,9 +3347,11 @@ pub fn show(app: &mut SolveApp, ctx: &egui::Context) {
     let nothing_focused = ctx.memory(|m| m.focused().is_none());
     let canvas_enter = enter_free && ctx.memory(|m| m.had_focus_last_frame(egui::Id::new("sc_canvas_value")));
     // Tables (configurations, a study's keys) take Enter for their cells.
-    let enter_applies = !matches!(d.kind, Kind::Sketch | Kind::Measure { .. } | Kind::ConfirmDelete { .. })
-        && !matches!(&d.kind, Kind::Motion(k) if k.wide())
-        && !matches!(&d.kind, Kind::Material { editor, .. } if editor.editing());
+    let enter_applies =
+        !matches!(d.kind, Kind::Sketch | Kind::Measure { .. } | Kind::Stress(_) | Kind::Thermal(_) | Kind::Flow(_) | Kind::ConfirmDelete { .. })
+            && !matches!(&d.kind, Kind::Calculator(f) if !f.apply)
+            && !matches!(&d.kind, Kind::Motion(k) if k.wide())
+            && !matches!(&d.kind, Kind::Material { editor, .. } if editor.editing());
     let report_active = app.issue_report.draft.is_some();
     if !preset_prompt && !report_active && enter_applies && app.applying.is_none() && (enter || canvas_enter || (enter_free && nothing_focused)) {
         ok = true;
@@ -4879,7 +4913,10 @@ fn dialog_commands(app: &SolveApp, d: &Dialog) -> Result<Vec<(String, Value)>, S
                 crate::tools::projection_preselection(sels(d, 0)).ok_or_else(|| "select geometry or bodies that can be projected".to_string())?;
             ("sketch.project", json!({"refs": refs, "projection_link": projection_link}))
         }
-        Kind::Sketch | Kind::Measure { .. } => return Ok(Vec::new()),
+        Kind::Calculator(f) if f.apply => return Ok(vec![(f.command.to_string(), f.params_from(&app.session, &d.inputs)?)]),
+        Kind::Sketch | Kind::Measure { .. } | Kind::Stress(_) | Kind::Thermal(_) | Kind::Flow(_) | Kind::Calculator(_) => {
+            return Ok(Vec::new());
+        }
         Kind::Assembly(k) => return crate::dialogs_assembly::commands(app, k, &d.inputs),
         Kind::Sheet(k) => return crate::dialogs_sheet::commands(app, k, &d.inputs, &d.extra),
         Kind::Surface(k) => return crate::dialogs_surface::commands(app, k, &d.inputs, &d.extra),

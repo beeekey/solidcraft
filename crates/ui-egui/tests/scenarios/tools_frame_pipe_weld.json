@@ -1,0 +1,235 @@
+[
+ {
+  "note": "A mitred square-tube frame, a pipe route with a tangent bend, and a fillet weld along the inside corner of a bracket."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.frame",
+   "params": {
+    "profile": {
+     "family": "square_tube",
+     "size": "40x40x3"
+    },
+    "members": [
+     {
+      "from": [
+       0,
+       0,
+       0
+      ],
+      "to": [
+       400,
+       0,
+       0
+      ]
+     },
+     {
+      "from": [
+       400,
+       0,
+       0
+      ],
+      "to": [
+       400,
+       300,
+       0
+      ]
+     },
+     {
+      "from": [
+       400,
+       300,
+       0
+      ],
+      "to": [
+       0,
+       300,
+       0
+      ]
+     },
+     {
+      "from": [
+       0,
+       300,
+       0
+      ],
+      "to": [
+       0,
+       0,
+       0
+      ]
+     }
+    ]
+   }
+  },
+  "result": {
+   "members": 4,
+   "joints.mitred": 4,
+   "total_length_mm": 1400,
+   "profile.area_mm2": 444
+  }
+ },
+ {
+  "expect": {
+   "bodies": 4,
+   "errors": 0,
+   "bbox": {
+    "body": "Frame member 1",
+    "min": [
+     -20,
+     -20,
+     -20
+    ],
+    "max": [
+     420,
+     20,
+     20
+    ]
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.pipe_route",
+   "params": {
+    "points": [
+     [
+      0,
+      0,
+      100
+     ],
+     [
+      100,
+      0,
+      100
+     ],
+     [
+      100,
+      100,
+      100
+     ]
+    ],
+    "outer_diameter": 12,
+    "wall": 1,
+    "bend_radius": 24
+   }
+  },
+  "result": {
+   "bends": 1,
+   "straight_mm": 152,
+   "centreline_mm": [
+    189.699,
+    0.0001
+   ]
+  }
+ },
+ {
+  "expect": {
+   "bodies": 5,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 40,
+    "width": 40,
+    "height": 5,
+    "corner": [
+     500,
+     0,
+     0
+    ],
+    "body_name": "Bracket"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 40,
+    "width": 5,
+    "height": 20,
+    "corner": [
+     500,
+     0,
+     5
+    ],
+    "operation": "join",
+    "targets": [
+     "Bracket"
+    ]
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.fillet_weld",
+   "params": {
+    "body": "Bracket",
+    "edge": [
+     520,
+     5,
+     5
+    ],
+    "leg_mm": 4
+   }
+  },
+  "result": {
+   "length_mm": 40,
+   "leg_mm": 4,
+   "throat_mm": [
+    2.8284,
+    0.0001
+   ],
+   "volume_mm3": [
+    320,
+    0.001
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.fillet_weld",
+   "params": {
+    "body": "Bracket",
+    "edge": [
+     520,
+     40,
+     5
+    ],
+    "leg_mm": 4
+   }
+  },
+  "fail": true
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "bodies": 7,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_frame_pipe_weld"
+ }
+]

@@ -61,6 +61,12 @@ pub fn canonical(text: &str) -> Result<String, String> {
 /// Fixed tables whose dimensions describe a standard or an algorithm, rather than a library.
 const FIXED_ARRAYS: &[(&str, &str)] = &[
     ("assets/icons/app/shared/source/app_icon.rs", "FACES"), // Fixed five-face application mark geometry.
+    ("crates/analysis/src/fits.rs", "FINE_STEPS"),           // ISO 286 finer diameter steps, which r and s follow above 50 mm.
+    ("crates/analysis/src/fits.rs", "LETTERS"),              // ISO 286 fundamental deviation letters.
+    ("crates/analysis/src/fits.rs", "PLAIN_STEPS"),          // ISO 286 main diameter steps to 500 mm.
+    ("crates/analysis/src/fits.rs", "RAW_GRADES"),           // ISO 286 IT grade tolerances per diameter step.
+    ("crates/analysis/src/fluid.rs", "C"),                   // D3Q19 lattice velocity set, indexed by Q.
+    ("crates/analysis/src/fluid.rs", "W"),                   // D3Q19 lattice weights, indexed by Q.
     ("crates/doc/src/component_color.rs", "PALETTE"),        // Fixed 24-step hue-wheel algorithm.
     ("crates/doc/src/eval.rs", "ISO_COARSE"),                // ISO metric coarse diameter/pitch pairs.
     ("crates/doc/src/format.rs", "JSON_STEPS"),              // Frozen historical migrations; additions use format/pending.

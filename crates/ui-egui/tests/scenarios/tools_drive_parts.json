@@ -1,0 +1,215 @@
+[
+ {
+  "note": "Drive parts: a shaft, a three-coil spring, a toothed pulley with its belt, a sprocket with its chain measured, a T-slot profile and a stepper motor."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.shaft",
+   "params": {
+    "sections": [
+     {
+      "diameter": 20,
+      "length": 30,
+      "keyway": {
+       "width": 6,
+       "depth": 3.5
+      }
+     },
+     {
+      "diameter": 25,
+      "length": 40,
+      "groove": {
+       "width": 1.3,
+       "depth": 1
+      }
+     },
+     {
+      "diameter": 20,
+      "length": 30
+     }
+    ],
+    "chamfer_mm": 1
+   }
+  },
+  "result": {
+   "length_mm": 100
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.spring",
+   "params": {
+    "kind": "compression",
+    "mean_diameter": 20,
+    "wire_diameter": 2,
+    "coils": 6,
+    "free_length": 50
+   }
+  },
+  "result": {
+   "rate_n_mm": [
+    3.29,
+    0.02
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.pulley",
+   "params": {
+    "standard": "GT2-2M",
+    "teeth": 20,
+    "width": 7,
+    "bore_mm": 5,
+    "flanges": true,
+    "centre": [
+     100,
+     0,
+     0
+    ]
+   }
+  },
+  "result": {
+   "pitch_diameter_mm": [
+    12.732,
+    0.001
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.belt",
+   "params": {
+    "standard": "GT2-2M",
+    "width": 6,
+    "wheels": [
+     {
+      "centre": [
+       100,
+       0
+      ],
+      "teeth": 20
+     },
+     {
+      "centre": [
+       200,
+       0
+      ],
+      "teeth": 20
+     }
+    ]
+   }
+  },
+  "result": {
+   "length_mm": [
+    240,
+    1e-06
+   ],
+   "teeth": 120,
+   "teeth_in_mesh.0": 10
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.sprocket",
+   "params": {
+    "standard": "08B",
+    "teeth": 17,
+    "bore_mm": 10,
+    "centre": [
+     300,
+     0,
+     0
+    ]
+   }
+  },
+  "result": {
+   "pitch_diameter_mm": [
+    69.11,
+    0.001
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.chain",
+   "params": {
+    "standard": "08B",
+    "sprockets": [
+     {
+      "centre": [
+       300,
+       0
+      ],
+      "teeth": 17
+     },
+     {
+      "centre": [
+       500,
+       0
+      ],
+      "teeth": 17
+     }
+    ],
+    "build": false
+   }
+  },
+  "result": {
+   "links": 50,
+   "length_mm": 635
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.tslot",
+   "params": {
+    "series": 20,
+    "length": 100
+   }
+  },
+  "result": {
+   "bore_mm": 4.2
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "design.stepper_motor",
+   "params": {
+    "frame": "NEMA 17"
+   }
+  },
+  "result": {
+   "body_mm": 42.3,
+   "bolt_square_mm": 31
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "bodies": 9,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_drive_parts"
+ }
+]

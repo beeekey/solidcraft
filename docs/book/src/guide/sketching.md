@@ -449,3 +449,37 @@ and association survive save/reopen and undo/redo. Symmetric offsets share one d
 Two Sides has an independent distance for each side. Disconnected selected curves or chains are
 all offset. Breaking an association retains its current geometry and removes that association's
 driver. Older offsets retain their saved fixed distances.
+
+## Tracing a picture
+
+Insert a picture as a canvas (**Sketch › Insert › Canvas**, or `canvas.insert` with its width
+on the plane), then **Trace Canvas** (`sketch.trace_canvas`, on the **3DEEE › TRACE** panel,
+its form filled with the last canvas) draws the dark areas of it as
+closed polylines on the canvas's plane, placed exactly over the picture: a scanned gasket, a
+logo, a photographed plate with its background removed. `threshold` (0 to 255) says what counts
+as dark, `light: true` traces the light areas instead, `tolerance_px` is how far the polyline may
+stray from the pixel staircase (1 pixel by default), and `min_area_px` drops specks. A loop
+inside another is a hole in the profile, so the sketch extrudes as drawn. The reply gives the
+loops, the holes and the millimetres per pixel; calibrate the canvas's width first and the trace
+comes out to size.
+
+```json
+{"command": "sketch.trace_canvas", "params": {"canvas": "Gasket", "threshold": 128, "tolerance_px": 1}}
+```
+
+## Cleaning a picture before tracing
+
+Three tools on **3DEEE › Trace** work the picture over so that **Trace Canvas** sees a clean
+silhouette. **Remove Background** (`canvas.remove_background`) is a wand: everything of the seed
+pixel's colour joined to it (a corner by default) is painted white, or black, or made
+transparent; raise the tolerance for a shaded or noisy background. **Select Object**
+(`canvas.select_object`) goes the other way round: the background is whatever most of the
+picture's border agrees on, and what is left, in one piece with its holes filled, is the
+object; the reply says how much of the picture it is and whether it runs off the edge. **Shoot
+It Square On** (`canvas.rectify`) takes the four corners of a rectangle you know the size of (a
+sheet of paper, a tile) and resamples the photograph so that rectangle is square on and to
+scale, then sets the canvas's width to match. All three rewrite the canvas's image in the design.
+
+**Ray Trace** (`inspect.ray_trace`, on the same panel) is the one optical check: a ray from a
+point along a direction, reflected off the bodies as first-surface mirrors for so many bounces,
+drawn as a 3D sketch polyline with each hit and its normal in the reply.

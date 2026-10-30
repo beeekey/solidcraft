@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Infill on a section</title>
+  <path d="M8.62 34.25L32 47.75L32 59L8.62 45.5Z" fill="#b8c3cf"/>
+  <path d="M55.38 34.25L32 47.75L32 59L55.38 45.5Z" fill="#8e9faf"/>
+  <path d="M32 20.75L55.38 34.25L32 47.75L8.62 34.25Z" fill="#e2e8ef"/>
+  <path d="M32 20.75L55.38 34.25L55.38 45.5L32 59L8.62 45.5L8.62 34.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 34.25L32 47.75L55.38 34.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 47.75L32 59" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M37.85 24.12L14.46 37.62" fill="none" stroke="#236ead" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M26.15 24.12L49.54 37.62" fill="none" stroke="#236ead" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M43.69 27.5L20.31 41" fill="none" stroke="#236ead" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M20.31 27.5L43.69 41" fill="none" stroke="#236ead" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M49.54 30.88L26.15 44.38" fill="none" stroke="#236ead" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14.46 30.88L37.85 44.38" fill="none" stroke="#236ead" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 20.75L55.38 34.25L32 47.75L8.62 34.25Z" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8.62 34.25L8.62 23L32 36.5L55.38 23L55.38 34.25Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 3"/>
+  <path d="M8.62 23L32 9.5L55.38 23" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="3 3"/>
+</svg>
