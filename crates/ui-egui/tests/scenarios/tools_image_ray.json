@@ -1,0 +1,185 @@
+[
+ {
+  "note": "Picture tools and a ray: a canvas with a dark square on a light ground has its background removed and is traced, then squared up from four corners; a ray bounces off a block into a 3D sketch; and Ray Trace from the 3DEEE tab with Enter."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "canvas.insert",
+   "params": {
+    "data": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAbElEQVR4nO3PQQ0AIBADQUTgXx4fTCCCx+aSaVZAZ917RrfyBwD1A4D6AUD9AKB+AFA/AKgfANQPAOoHAPUDgPpBD9gfAwAAAAAAAAAAAAAAAACYDGgDqAOoA6gDqAOoA6gDqAOoA6gDqBsPeM4t2kr2dwxfAAAAAElFTkSuQmCC",
+    "plane": "XY",
+    "width": 64,
+    "name": "Photo"
+   }
+  },
+  "result": {
+   "pixels.0": 64
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "canvas.remove_background",
+   "params": {
+    "canvas": "Photo",
+    "seed_px": [
+     2,
+     2
+    ]
+   }
+  },
+  "result": {
+   "background_share": [
+    0.9,
+    0.02
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "sketch.trace_canvas",
+   "params": {
+    "canvas": "Photo",
+    "name": "Traced"
+   }
+  },
+  "result": {
+   "contours": 1
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "canvas.select_object",
+   "params": {
+    "canvas": "Photo"
+   }
+  },
+  "result": {
+   "object_share": [
+    0.0977,
+    0.01
+   ],
+   "touches_border": false
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "canvas.rectify",
+   "params": {
+    "canvas": "Photo",
+    "corners": [
+     [
+      -10,
+      -10
+     ],
+     [
+      10,
+      -10
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      -10,
+      10
+     ]
+    ],
+    "width_mm": 40,
+    "height_mm": 40
+   }
+  },
+  "result": {
+   "width_mm": 40
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 20,
+    "width": 40,
+    "height": 40,
+    "corner": [
+     100,
+     -20,
+     0
+    ],
+    "body_name": "Mirror"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "inspect.ray_trace",
+   "params": {
+    "origin": [
+     0,
+     0,
+     20
+    ],
+    "direction": [
+     1,
+     0,
+     0
+    ],
+    "bounces": 3,
+    "name": "Beam"
+   }
+  },
+  "result": {
+   "bounces": 1,
+   "hits.0.body": "Mirror",
+   "escaped": true
+  }
+ },
+ {
+  "expect": {
+   "bodies": 1,
+   "errors": 0
+  }
+ },
+ {
+  "click": {
+   "tab": "3DEEE"
+  }
+ },
+ {
+  "expect": {
+   "shown_handles": [
+    "panel:3DEEE:TRACE"
+   ]
+  }
+ },
+ {
+  "start": "inspect.ray_trace"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "RAY TRACE",
+    "Bounces",
+    "OK"
+   ]
+  }
+ },
+ {
+  "key": "Enter"
+ },
+ {
+  "expect": {
+   "dialog": null,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_image_ray"
+ }
+]

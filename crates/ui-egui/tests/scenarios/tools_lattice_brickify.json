@@ -1,0 +1,140 @@
+[
+ {
+  "note": "A gyroid lattice fills a cube (the source hidden) and a brick kit covers a block with its bill of materials; undo takes the lattice back."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 40,
+    "width": 40,
+    "height": 40,
+    "body_name": "Box"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "construct.lattice",
+   "params": {
+    "body": "Box",
+    "family": "walled_tpms",
+    "cell": "gyroid",
+    "cell_mm": 10,
+    "thickness_mm": 1.5,
+    "samples_per_cell": 6,
+    "hide": true
+   }
+  },
+  "result": {
+   "family": "walled_tpms",
+   "cell": "Gyroid",
+   "body_volume_mm3": 64000,
+   "built.name": "Box lattice",
+   "samples": 21952
+  }
+ },
+ {
+  "expect": {
+   "bodies": 2,
+   "errors": 0,
+   "body_volume": {
+    "body": "Box lattice",
+    "volume": [
+     15133,
+     0.001
+    ]
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": 32,
+    "width": 16,
+    "height": 19.2,
+    "corner": [
+     60,
+     0,
+     0
+    ],
+    "body_name": "Block"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "construct.brickify",
+   "params": {
+    "body": "Block",
+    "profiles": false,
+    "rods": false
+   }
+  },
+  "result": {
+   "coverage": 1,
+   "cells_total": 16,
+   "bill_of_materials.Brick 2x4": 1,
+   "bill_of_materials.Brick 2x2": 2,
+   "built.name": "Block kit"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "fit"
+  }
+ },
+ {
+  "expect": {
+   "bodies": 4,
+   "errors": 0
+  }
+ },
+ {
+  "shot": "tools_lattice_brickify"
+ },
+ {
+  "key": "Z",
+  "cmd": true
+ },
+ {
+  "key": "Z",
+  "cmd": true
+ },
+ {
+  "key": "Z",
+  "cmd": true
+ },
+ {
+  "expect": {
+   "bodies": 1,
+   "errors": 0
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "construct.lattice",
+   "params": {
+    "body": "Box",
+    "family": "walled_tpms",
+    "cell": "swirl",
+    "cell_mm": 10,
+    "thickness_mm": 1
+   }
+  },
+  "fail": true
+ }
+]

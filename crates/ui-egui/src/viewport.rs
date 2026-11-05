@@ -1798,7 +1798,11 @@ fn body_scene(
         }
         let closed = b.is_closed();
         let class = plan_class(app, &face_classes);
-        let planned = class.and_then(|class| drawn_plan(app, b, true).map(|plan| (plan, class)));
+        // Written out so the plan is only built for a classified body (clippy's `Option::zip` would build it eagerly).
+        let planned = match class {
+            Some(class) => drawn_plan(app, b, true).map(|plan| (plan, class)),
+            None => None,
+        };
         let on_gpu = planned.is_some();
         if let Some((plan, class)) = planned {
             sc.planned.push(crate::gpu::PlannedBody { plan, face_colors: face_colors.clone(), class, closed });

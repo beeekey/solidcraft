@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Best print orientation</title>
+  <path d="M0.82 42.69L32 60.69L32 63.5L0.82 45.5Z" fill="#b8c3cf"/>
+  <path d="M63.18 42.69L32 60.69L32 63.5L63.18 45.5Z" fill="#8e9faf"/>
+  <path d="M32 24.69L63.18 42.69L32 60.69L0.82 42.69Z" fill="#e2e8ef"/>
+  <path d="M32 24.69L63.18 42.69L63.18 45.5L32 63.5L0.82 45.5L0.82 42.69Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M0.82 42.69L32 60.69L63.18 42.69" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 60.69L32 63.5" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22 36L28 44L28 50L22 42Z" fill="#328bd3"/>
+  <path d="M22 36L28 44L28 50L22 42Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M28 44L46 34L46 40L28 50Z" fill="#236ead"/>
+  <path d="M28 44L46 34L46 40L28 50Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22 36L40 26L46 34L28 44Z" fill="#b9ddf8"/>
+  <path d="M22 36L40 26L46 34L28 44Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M18.96 21.9A16 12 0 0 1 39.47 14.72" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M44.47 12.72L37.47 8.72L38.47 17.72Z" fill="#236ead"/>
+</svg>

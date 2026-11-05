@@ -39,6 +39,8 @@ fn file_commands_stay_inside_the_agents_folders() {
             ("doc.recovery_list", json!({"dir": out.to_string_lossy()})),
             ("doc.recovery_discard", json!({"dir": out.to_string_lossy(), "id": "part"})),
             ("doc.recover", json!({"dir": out.to_string_lossy(), "id": "part", "discard": true})),
+            ("inspect.export_fem", json!({"path": at(&out, "fem")})),
+            ("inspect.export_fem", json!({"path": at(&root, "../out/fem")})),
         ] {
             let e = s.execute(cmd, &p).unwrap_err().to_string();
             assert!(e.contains("outside the folders this agent may use"), "{cmd}: {e}");

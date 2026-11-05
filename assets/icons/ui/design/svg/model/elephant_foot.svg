@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Elephant foot</title>
+  <path d="M0.82 43.25L32 61.25L32 63.5L0.82 45.5Z" fill="#b8c3cf"/>
+  <path d="M63.18 43.25L32 61.25L32 63.5L63.18 45.5Z" fill="#8e9faf"/>
+  <path d="M32 25.25L63.18 43.25L32 61.25L0.82 43.25Z" fill="#e2e8ef"/>
+  <path d="M32 25.25L63.18 43.25L63.18 45.5L32 63.5L0.82 45.5L0.82 43.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M0.82 43.25L32 61.25L63.18 43.25" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 61.25L32 63.5" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14.46 23L32 33.12L32 53.38L14.46 43.25Z" fill="#b8c3cf"/>
+  <path d="M49.54 23L32 33.12L32 53.38L49.54 43.25Z" fill="#8e9faf"/>
+  <path d="M32 12.88L49.54 23L32 33.12L14.46 23Z" fill="#e2e8ef"/>
+  <path d="M32 12.88L49.54 23L49.54 43.25L32 53.38L14.46 43.25L14.46 23Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14.46 23L32 33.12L49.54 23" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 33.12L32 53.38" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14.46 39.88L32 50L32 56.75L8.62 43.25Z" fill="#328bd3"/>
+  <path d="M14.46 39.88L32 50L32 56.75L8.62 43.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M49.54 39.88L32 50L32 56.75L55.38 43.25Z" fill="#236ead"/>
+  <path d="M49.54 39.88L32 50L32 56.75L55.38 43.25Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

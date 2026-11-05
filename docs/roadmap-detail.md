@@ -101,6 +101,102 @@ cooperative cancellation. Curve tolerance (0.0001–1 mm, default 0.01 mm) is re
 the hidden-edge setting. Cancelled exports preserve the model and the previous destination;
 completed drawings publish atomically. The browser still exports synchronously.
 
+## Analysis
+
+- **Stress Analysis** (`inspect.stress`, Inspect panel): a native voxel finite-element solver in
+  `crates/analysis` (L1, geom only, builds for wasm). Linear elasticity on trilinear hexahedra,
+  isotropic or orthotropic material, Jacobi-preconditioned conjugate gradients; held and loaded
+  faces picked in the dialog; gravity and resting (push-only) supports; **buckling** by inverse
+  iteration on the geometric stiffness with the second-order amplification of an L/500 bow, and
+  **collapse** by a co-rotational large-displacement solve that walks the load on until no
+  equilibrium is left. Tests hold it to Hooke's law, beam theory and Euler's column. The dialog
+  colours the mesh cells by von Mises stress.
+- **Thermal Analysis** (`inspect.thermal`): the part in still air on the same grid, steady
+  conduction with free convection by orientation (Churchill–Chu, McAdams, Elenbaas channels
+  between fins) and radiation, a held face, a sealed enclosure. Tests check conservation of
+  energy, the textbook film coefficient and that a fin array has a best spacing.
+- **Flow Analysis** (`inspect.flow`): lattice Boltzmann (D3Q19, BGK, Smagorinsky subgrid past
+  the resolved Reynolds number) through the passages the inlet reaches or around the part in a
+  tunnel; pressure drop, flow rate, drag by momentum exchange; conjugate heat (upwind
+  advection, harmonic-mean conduction) for the outlet temperature and the watts carried away.
+  Tests hold it to the exact laminar duct solution and to conservation of energy.
+- **Design calculators** (numbers in, numbers out, Inspect commands): bolted joint, thread
+  engagement, bearing life (ISO 281), damping and isolation, ISO 286 fits with press-fit
+  pressure and torque, ISO 2768 general tolerances, tolerance stack-up, hole stack and fastener
+  choice. See the guide's Design calculators page.
+- **Bamboo joint** (`inspect.bamboo_joint`): a culm glued into a socket, checked the three ways
+  it fails: shear-out along the fibres (the bamboo's 5 MPa usually governs over the glue),
+  the glue line, and the culm crushing under the moment at the mouth (a node inside the socket
+  doubles what it takes); the engagement a pull-out load needs at a safety factor.
+- **Parametric check** (`inspect.parametric_check`): every user parameter (and, asked for, every
+  plain sketch and feature dimension) nudged down and up on a scratch copy of the design and the
+  rebuilt model classified: follows, inert, fails, empties, detaches into more shells or merges.
+  The modelled-against-drawn test of a design review, done by the machine; the design is left
+  as it was.
+- **Calculator dialogs**: every calculator above opens a dialog under Inspect with its fields and
+  a Compute button, the reply laid out as rows with the verdict, the advice and the warnings.
+- **Generative design** (`generative.study`, `generative.free_form`, `generative.check`): the
+  skeleton search (struts and plates, mutated and recombined, truss pre-filter, voxel FEM
+  scoring, load/heat/drag goals with the stream solved by the flow solver), the SIMP density
+  field, and the checks (finer mesh, buckling, fatigue by Basquin and Goodman with Marin
+  factors, Miner's rule, makeability scans). Bodies come back as mesh bodies extracted by
+  marching cubes. `inspect.fibre` checks a grained material (bamboo species built in) in its
+  own frame.
+- **Print and machining analysis** (`inspect.print`, `inspect.print_orient`,
+  `inspect.machining`): overhangs, support, thin walls, bridges, material and time from the
+  filament and infill, the six-orientation ranking; the printed-part orthotropic material; corner
+  radii, pockets, walls, drill sizes, reach, setups and turning rules from the kernel's face
+  records. `inspect.printed_stress` solves a part as printed (the print settings as an
+  orthotropic material stacked along the build direction) and judges it within a layer and
+  between layers; `inspect.compare_infill` tables every infill pattern at one mass.
+  Print preparation (`print.elephant_foot`, `print.hole_compensation`, `print.split`) composes
+  chamfer, cut and split features; `construct.topology_optimize` keeps the load path as a mesh
+  body; `plastic.grill` cuts a vent of slots between ribs into a flat wall.
+  Implicit modelling (analysis/implicit.rs): `construct.variable_shell` and
+  `construct.blend_boolean` on sampled distance fields; `inspect.stress_zone`, `inspect.probe` and
+  `inspect.export_fem` (a CalculiX deck of the voxel mesh) read the stress solve.
+  The bamboo workshop (`design.bamboo_connector`, `design.bamboo_frame` for bicycles and trailers,
+  `design.bearing`, `design.damper`) and frame editing (`design.frame_end_cap`, `design.frame_mitre`, `design.frame_notch`,
+  `design.frame_change_section`, `design.frame_extend`, `design.groove_weld`).
+  Picture tools (`canvas.remove_background`, `canvas.select_object`, `canvas.rectify`) rewrite a
+  canvas's image for tracing; `inspect.ray_trace` draws mirror reflections as a 3D sketch.
+- **Mechanical generators** (`design.*`, guide page Mechanical generators): involute spur,
+  helical, herringbone (mesh bodies by default: a helicoid loft takes the kernel minutes), ring
+  and bevel gears (a two-section loft), racks, stepped shafts with keyways and grooves,
+  compression/extension/torsion springs, timing pulleys and belts for 16 belt standards (the loop
+  solved over pulleys and idlers, the belt swept as a solid, the matching standard belt and the
+  teeth in mesh reported), ISO 606 sprockets and roller chains, T-slot 2020/3030/4040 profiles,
+  NEMA 8–23 stepper motors, snap hooks, heat-set insert bosses and bamboo culms, each built in
+  its own component from sketches and features. **Brickify** (`construct.brickify`) lays a body
+  out on a stud grid and replaces it with interlocking bricks, T-slot runs and clamping rods,
+  with the bill of materials.
+- **Lattices** (`construct.lattice`, guide page Lattices): a body filled with a walled or solid
+  TPMS (gyroid, Schwarz P, diamond, Neovius, lidinoid, split P, IWP), a strut lattice (simple,
+  body- and face-centred cubic, octet, diamond, Kelvin) or a honeycomb under a solid skin, the
+  thickness uniform, graded along an axis or from a point, or following a stress solve; built on
+  the body's distance field and meshed by marching tetrahedra into a mesh body.
+- **Several bodies in one stress solve** (`inspect.stress` with `bodies`, the dialog's Bodies
+  input): bonded where they touch, or in contact (sliding, with friction, with a preload) where
+  the interfaces may open; each body at its own material's stiffness.
+- **Worm drives, crown gears, frames and pipe routes** (`design.worm`, `design.worm_wheel`,
+  `design.crown_gear`, `design.frame`, `design.pipe_route`): the worm and its throated wheel and
+  the crown gear as mesh bodies; frames of catalogue profiles (tubes, angles, channels, IPE
+  beams, T-slot) along lines, mitred where two members meet and trimmed where one ends on
+  another; tubes along waypoints with tangent bends.
+- **Fillet welds** (`design.fillet_weld`): a bead swept along an inside corner's edge, straight
+  or round a pipe's foot, with its length, throat and volume.
+- **Trace Canvas** (`sketch.trace_canvas`): the dark or light areas of an inserted picture as
+  closed sketch polylines over the picture, holes nested, simplified to a pixel tolerance.
+- **The 3DEEE tab**: every design tool with a button and a form (`dialogs_tools`): GEARS, DRIVE,
+  PARTS (snap hook, insert boss, bamboo culm, Brickify with bricks, T-slot profiles and threaded
+  rods), STRUCTURE (frame, pipe route, fillet weld, lattice), GENERATIVE, MAKE (print, print
+  orientation, printed stress, compare infill, machining, elephant foot, hole compensation, split
+  for print; topology optimisation under GENERATIVE and the grill under PARTS) and CALCULATE, plus Trace Canvas. Generators apply on OK; the builders
+  (lattice, brick kit, generative design) run from a button and report what they built; the
+  checks compute. Picks are the dialog's selection inputs: a body, a face or an edge; sketch
+  lines as a frame's members or a pipe route's waypoints; faces as a generative study's mounts
+  and loads with the force typed. Stress, thermal and flow analysis stay under SOLID › INSPECT.
+
 ## Interactive modelling
 
 - Modelled threads preview their cut before OK using the background worker on desktop.

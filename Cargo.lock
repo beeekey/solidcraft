@@ -4109,6 +4109,16 @@ name = "solidcraft-3dx-client"
 version = "0.40.0-rc.2"
 
 [[package]]
+name = "solidcraft-analysis"
+version = "0.40.0-rc.2"
+dependencies = [
+ "serde",
+ "solidcore-record",
+ "solidcraft-geom",
+ "thiserror 2.0.21",
+]
+
+[[package]]
 name = "solidcraft-cli"
 version = "0.40.0-rc.2"
 dependencies = [
@@ -4172,6 +4182,7 @@ dependencies = [
  "serde_json",
  "serde_path_to_error",
  "solidcore-record",
+ "solidcraft-analysis",
  "solidcraft-doc",
  "solidcraft-geom",
  "solidcraft-io",

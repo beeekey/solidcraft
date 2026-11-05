@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Trace canvas</title>
+  <path d="M8 9L56 9A3 3 0 0 1 59 12L59 52A3 3 0 0 1 56 55L8 55A3 3 0 0 1 5 52L5 12A3 3 0 0 1 8 9Z" fill="#b8c3cf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M10 14L54 14L54 50L10 50Z" fill="#e2e8ef"/>
+  <path d="M18 42C14 34 20 24 30 24C40 24 48 30 46 38C44 46 34 46 30 44C26 42 20 46 18 42Z" fill="#b8c3cf"/>
+  <path d="M18 42C14 34 20 24 30 24C40 24 48 30 46 38C44 46 34 46 30 44C26 42 20 46 18 42Z" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="18" cy="42" r="5" fill="#ffffff"/>
+  <circle cx="18" cy="42" r="2.8" fill="#236ead"/>
+  <circle cx="30" cy="24" r="5" fill="#ffffff"/>
+  <circle cx="30" cy="24" r="2.8" fill="#236ead"/>
+  <circle cx="46" cy="38" r="5" fill="#ffffff"/>
+  <circle cx="46" cy="38" r="2.8" fill="#236ead"/>
+</svg>

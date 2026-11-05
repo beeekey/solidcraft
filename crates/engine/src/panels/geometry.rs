@@ -239,7 +239,7 @@ impl ResolvedLayout {
 /// resolver; both return the same meaningful geometry contract. No layout writes.
 pub fn resolve_geometry(service: &LayoutService, capacity: LogicalRect, direction: Direction, chrome: f32) -> PanelResult<ResolvedLayout> {
     capacity.validate()?;
-    if !chrome.is_finite() || chrome < 0.0 || chrome > 256.0 {
+    if !chrome.is_finite() || !(0.0..=256.0).contains(&chrome) {
         return Err(error(Rule::Bounds, "invalid header/footer chrome extent"));
     }
     let mut result = ResolvedLayout::default();

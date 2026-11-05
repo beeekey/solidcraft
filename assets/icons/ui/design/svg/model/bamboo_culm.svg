@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Bamboo culm</title>
+  <path d="M24 8L24 56A8 4.62 0 0 0 40 56L40 8Z" fill="#b8c3cf"/>
+  <path d="M34.8 8L34.8 60.33A8 4.62 0 0 0 40 56L40 8Z" fill="#8e9faf"/>
+  <path d="M24 8L24 56A8 4.62 0 0 0 40 56L40 8Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23 17.6L23 22.4A9 5.2 0 0 0 41 22.4L41 17.6A9 5.2 0 0 0 23 17.6Z" fill="#328bd3"/>
+  <path d="M23 17.6L23 22.4A9 5.2 0 0 0 41 22.4L41 17.6A9 5.2 0 0 0 23 17.6Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23 33.6L23 38.4A9 5.2 0 0 0 41 38.4L41 33.6A9 5.2 0 0 0 23 33.6Z" fill="#328bd3"/>
+  <path d="M23 33.6L23 38.4A9 5.2 0 0 0 41 38.4L41 33.6A9 5.2 0 0 0 23 33.6Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23 49.6L23 54.4A9 5.2 0 0 0 41 54.4L41 49.6A9 5.2 0 0 0 23 49.6Z" fill="#328bd3"/>
+  <path d="M23 49.6L23 54.4A9 5.2 0 0 0 41 54.4L41 49.6A9 5.2 0 0 0 23 49.6Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24 8A8 4.62 0 1 0 40 8A8 4.62 0 1 0 24 8Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M26.8 8A5.2 3 0 1 0 37.2 8A5.2 3 0 1 0 26.8 8Z" fill="#8e9faf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

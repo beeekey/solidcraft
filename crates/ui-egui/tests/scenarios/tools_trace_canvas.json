@@ -1,0 +1,125 @@
+[
+ {
+  "note": "Trace Canvas: a checkerboard picture inserted on XY and calibrated to 100 mm is traced into one closed profile per dark square, one of them extruded; the light squares trace too."
+ },
+ {
+  "make_image": "pic.png"
+ },
+ {
+  "choose_file": "pic.png"
+ },
+ {
+  "start": "canvas.insert"
+ },
+ {
+  "click": {
+   "plane": "XY"
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "canvas_width": [
+    100,
+    0.5
+   ]
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "sketch.trace_canvas",
+   "params": {
+    "canvas": "Canvas1"
+   }
+  },
+  "result": {
+   "contours": 25,
+   "holes": 0,
+   "points": 100,
+   "dropped": 0,
+   "mm_per_pixel": 0.5
+  }
+ },
+ {
+  "expect": {
+   "sketch_curves": {
+    "sketch": "Trace of Canvas1",
+    "own": 100
+   },
+   "sketching": false
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.extrude",
+   "params": {
+    "profiles": [
+     {
+      "point": [
+       -30.5,
+       24.5
+      ]
+     }
+    ],
+    "distance": 2
+   }
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "expect": {
+   "errors": 0,
+   "volume": [
+    200,
+    0.001
+   ],
+   "bodies": 1
+  }
+ },
+ {
+  "shot": "tools_trace_canvas"
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "sketch.trace_canvas",
+   "params": {
+    "canvas": 1,
+    "light": true,
+    "name": "Light squares"
+   }
+  },
+  "result": {
+   "contours": 25,
+   "holes": 0
+  }
+ },
+ {
+  "expect": {
+   "sketch_curves": {
+    "sketch": "Light squares",
+    "own": 100
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "sketch.trace_canvas",
+   "params": {
+    "canvas": "Canvas1",
+    "threshold": 10
+   }
+  },
+  "fail": true
+ }
+]

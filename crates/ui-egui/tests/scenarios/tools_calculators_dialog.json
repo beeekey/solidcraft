@@ -1,0 +1,361 @@
+[
+ {
+  "note": "Every calculator opens from the toolbar, computes from its fields and shows its figures and verdict; nothing in the design changes."
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "parameters.add",
+   "params": {
+    "name": "len",
+    "expression": "60 mm"
+   }
+  }
+ },
+ {
+  "call": "engine.execute",
+  "params": {
+   "command": "solid.box",
+   "params": {
+    "length": "len",
+    "width": 20,
+    "height": 10,
+    "body_name": "Bar"
+   }
+  }
+ },
+ {
+  "call": "ui.view",
+  "params": {
+   "view": "iso"
+  }
+ },
+ {
+  "start": "inspect.bolted_joint"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "widget": "30",
+  "near": "Clamped length (mm)"
+ },
+ {
+  "key": "A",
+  "cmd": true
+ },
+ {
+  "text": "40"
+ },
+ {
+  "key": "Tab"
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Tightening torque (N\u00b7m)",
+    "Verdict",
+    "M8 8.8"
+   ]
+  }
+ },
+ {
+  "shot": "tools_calc_bolted_joint"
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.thread_engagement"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Needed (mm)",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.bearing_life"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Hours",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.damping"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Natural (Hz)",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.fit"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Kind",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.general_tolerance"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Plus minus (mm)",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.tolerance_stack"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Nominal (mm)",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.hole_stack"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Thread",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.bamboo_joint"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Pull out capacity (N)",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "start": "inspect.parametric_check"
+ },
+ {
+  "expect": {
+   "dialog": "Calculator"
+  }
+ },
+ {
+  "click": {
+   "handle": "calc:compute"
+  }
+ },
+ {
+  "expect": {
+   "dialog": "Calculator",
+   "widgets": [
+    "Survived",
+    "Verdict"
+   ]
+  }
+ },
+ {
+  "key": "Escape"
+ },
+ {
+  "expect": {
+   "dialog": null
+  }
+ },
+ {
+  "expect": {
+   "bodies": 1,
+   "features": 1,
+   "errors": 0,
+   "param": {
+    "len": 60
+   }
+  }
+ }
+]
