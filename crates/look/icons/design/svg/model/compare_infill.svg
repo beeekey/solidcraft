@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Compare infill</title>
+  <path d="M5 14L30 14L30 50L5 50Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M5 21L30 21" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M5 28L30 28" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M5 35L30 35" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M5 42L30 42" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M5 49L30 49" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M11.25 14L11.25 50" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M17.5 14L17.5 50" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M23.75 14L23.75 50" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M34 14L59 14L59 50L34 50Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M45 22.6L40.5 25.2L36 22.6L36 17.4L40.5 14.8L45 17.4Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M57 22.6L52.5 25.2L48 22.6L48 17.4L52.5 14.8L57 17.4Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M51 33L46.5 35.6L42 33L42 27.8L46.5 25.2L51 27.8Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M45 43.4L40.5 46L36 43.4L36 38.2L40.5 35.6L45 38.2Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M57 43.4L52.5 46L48 43.4L48 38.2L52.5 35.6L57 38.2Z" fill="none" stroke="#6f879c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 10L32 54" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

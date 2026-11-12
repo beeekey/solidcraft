@@ -451,6 +451,8 @@ pub(crate) enum At {
     Occurrence { key: String, control: String },
     /// `{handle}`: a scenario handle drawn last frame.
     Handle(String),
+    /// `{tab}`: a toolbar tab by its name ("3DEEE").
+    Tab(String),
     /// `{browser: label}` or `{chevron: label}`: a browser row, or its fold arrow.
     Browser { label: String, chevron: bool },
     /// `{dimension}`: a sketch dimension's text.
@@ -477,6 +479,9 @@ impl At {
         if let Some(h) = field(p, "handle")? {
             return Ok(At::Handle(h));
         }
+        if let Some(t) = field(p, "tab")? {
+            return Ok(At::Tab(t));
+        }
         for (k, chevron) in [("browser", false), ("chevron", true)] {
             if let Some(label) = field(p, k)? {
                 return Ok(At::Browser { label, chevron });
@@ -501,7 +506,7 @@ impl At {
             let by = field::<[f64; 3]>(p, "by")?.map_or(Vec3::default(), |[x, y, z]| Vec3::new(x, y, z));
             return Ok(At::Gizmo { name, by, turn: field(p, "turn")?.unwrap_or(0.0) });
         }
-        Err(format!("ui.at needs one of occurrence, handle, browser, chevron, dimension, world, sketch, plane, axis, gizmo: {p}"))
+        Err(format!("ui.at needs one of occurrence, handle, tab, browser, chevron, dimension, world, sketch, plane, axis, gizmo: {p}"))
     }
 }
 

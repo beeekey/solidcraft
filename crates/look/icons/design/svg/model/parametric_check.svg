@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Parametric check</title>
+  <path d="M12.95 21L32 32L32 54L12.95 43Z" fill="#b8c3cf"/>
+  <path d="M51.05 21L32 32L32 54L51.05 43Z" fill="#8e9faf"/>
+  <path d="M32 10L51.05 21L32 32L12.95 21Z" fill="#e2e8ef"/>
+  <path d="M32 10L51.05 21L51.05 43L32 54L12.95 43L12.95 21Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M12.95 21L32 32L51.05 21" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 32L32 54" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8 56L56 56" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8 51L8 61" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M56 51L56 61" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="32" cy="56" r="6.4" fill="#ffffff"/>
+  <circle cx="32" cy="56" r="4.4" fill="#b9ddf8" stroke="#34465b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M12 8L12 20" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6 14L18 14" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M46 14L58 14" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

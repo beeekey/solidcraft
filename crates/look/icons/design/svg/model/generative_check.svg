@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Check design</title>
+  <path d="M12.08 20.5L32 32L32 55L12.08 43.5Z" fill="#b8c3cf"/>
+  <path d="M51.92 20.5L32 32L32 55L51.92 43.5Z" fill="#8e9faf"/>
+  <path d="M32 9L51.92 20.5L32 32L12.08 20.5Z" fill="#e2e8ef"/>
+  <path d="M32 9L51.92 20.5L51.92 43.5L32 55L12.08 43.5L12.08 20.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M12.08 20.5L32 32L51.92 20.5" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 32L32 55" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="46" cy="46" r="12" fill="#ffffff"/>
+  <circle cx="46" cy="46" r="10" fill="#236ead"/>
+  <path d="M40 46L44.5 50.5L52.5 41.5" fill="none" stroke="#ffffff" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

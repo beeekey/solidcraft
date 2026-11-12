@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Bamboo connector</title>
+  <path d="M6 36.5L24 36.5A1.8 5 0 0 1 24 46.5L6 46.5A1.8 5 0 0 1 6 36.5Z" fill="#328bd3"/>
+  <path d="M6 43.25L24 43.25A1.69 3.25 0 0 1 24 46.5L6 46.5A1.69 3.25 0 0 1 6 43.25Z" fill="#236ead"/>
+  <path d="M6 36.5L24 36.5A1.8 5 0 0 1 24 46.5L6 46.5A1.8 5 0 0 1 6 36.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M40 36.5L58 36.5A1.8 5 0 0 1 58 46.5L40 46.5A1.8 5 0 0 1 40 36.5Z" fill="#328bd3"/>
+  <path d="M40 43.25L58 43.25A1.69 3.25 0 0 1 58 46.5L40 46.5A1.69 3.25 0 0 1 40 43.25Z" fill="#236ead"/>
+  <path d="M40 36.5L58 36.5A1.8 5 0 0 1 58 46.5L40 46.5A1.8 5 0 0 1 40 36.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M56.2 41.5A1.8 5 0 1 0 59.8 41.5A1.8 5 0 1 0 56.2 41.5Z" fill="#b9ddf8" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M4.2 41.5A1.8 5 0 1 0 7.8 41.5A1.8 5 0 1 0 4.2 41.5Z" fill="#b9ddf8" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M26.8 15.5L26.8 31.5A5.2 3 0 0 0 37.2 31.5L37.2 15.5Z" fill="#328bd3"/>
+  <path d="M33.82 15.5L33.82 34.31A5.2 3 0 0 0 37.2 31.5L37.2 15.5Z" fill="#236ead"/>
+  <path d="M26.8 15.5L26.8 31.5A5.2 3 0 0 0 37.2 31.5L37.2 15.5Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M26.8 15.5A5.2 3 0 1 0 37.2 15.5A5.2 3 0 1 0 26.8 15.5Z" fill="#b9ddf8" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="32" cy="41.5" r="10" fill="#b8c3cf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M41.4 44.92A10 10 0 0 1 22.6 44.92L32 41.5Z" fill="#8e9faf"/>
+  <circle cx="32" cy="41.5" r="10" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

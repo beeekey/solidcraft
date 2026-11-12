@@ -30,6 +30,10 @@ pub(super) fn command(kind: &Kind) -> Option<&'static str> {
         Kind::TextMove(_) => Some("sketch.move"),
         Kind::EditParam { .. } => Some("parameters.change"),
         Kind::Measure { .. } => Some("inspect.measure"),
+        Kind::Stress(_) => Some("inspect.stress"),
+        Kind::Thermal(_) => Some("inspect.thermal"),
+        Kind::Flow(_) => Some("inspect.flow"),
+        Kind::Calculator(f) => Some(f.command),
         Kind::Section { .. } => Some("inspect.section"),
         Kind::Rename { .. } => Some("timeline.rename"),
         Kind::ConfirmDelete { .. } => Some("timeline.delete"),
@@ -1153,6 +1157,10 @@ fn additional_rows(app: &mut SolveApp, d: &mut Dialog, ui: &mut egui::Ui) -> boo
         Kind::Frame(k) => enter |= crate::dialogs_frame::rows(app, ui, k, &d.inputs),
         Kind::EndCap(k) => enter |= crate::dialogs_end_cap::rows(app, ui, k, &d.inputs),
         Kind::Assembly(k) => enter |= crate::dialogs_assembly::rows(app, ui, k, &mut d.inputs, &mut d.active),
+        Kind::Stress(f) => enter |= crate::dialogs_stress::rows(app, ui, f, &d.inputs),
+        Kind::Thermal(f) => enter |= crate::dialogs_thermal::rows(app, ui, f, &d.inputs),
+        Kind::Flow(f) => enter |= crate::dialogs_flow::rows(app, ui, f, &d.inputs),
+        Kind::Calculator(f) => enter |= crate::dialogs_calc::rows(app, ui, f, &d.inputs),
         Kind::Measure { result, show, .. } => measure_rows(app, ui, result.as_ref(), show),
         Kind::Section { offset, flip, hatch } => {
             enter |= expr_row(ui, "Distance", offset);

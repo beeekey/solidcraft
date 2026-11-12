@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Bamboo joint</title>
+  <path d="M6 17L58 17A2.3 7 0 0 1 58 31L6 31A2.3 7 0 0 1 6 17Z" fill="#b8c3cf"/>
+  <path d="M6 26.45L58 26.45A2.16 4.55 0 0 1 58 31L6 31A2.16 4.55 0 0 1 6 26.45Z" fill="#8e9faf"/>
+  <path d="M6 17L58 17A2.3 7 0 0 1 58 31L6 31A2.3 7 0 0 1 6 17Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M55.7 24A2.3 7 0 1 0 60.3 24A2.3 7 0 1 0 55.7 24Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M25 8L25 56A7 4.04 0 0 0 39 56L39 8Z" fill="#b8c3cf"/>
+  <path d="M34.45 8L34.45 59.79A7 4.04 0 0 0 39 56L39 8Z" fill="#8e9faf"/>
+  <path d="M25 8L25 56A7 4.04 0 0 0 39 56L39 8Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M25 8A7 4.04 0 1 0 39 8A7 4.04 0 1 0 25 8Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22 26Q32 32 42 26" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22 30.5Q32 36.5 42 30.5" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M22 35Q32 41 42 35" fill="none" stroke="#236ead" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

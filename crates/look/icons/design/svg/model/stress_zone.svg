@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Stress zone</title>
+  <path d="M9.48 19L32 32L32 58L9.48 45Z" fill="#b8c3cf"/>
+  <path d="M54.52 19L32 32L32 58L54.52 45Z" fill="#8e9faf"/>
+  <path d="M32 6L54.52 19L32 32L9.48 19Z" fill="#e2e8ef"/>
+  <path d="M32 6L54.52 19L54.52 45L32 58L9.48 45L9.48 19Z" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M9.48 19L32 32L54.52 19" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 32L32 58" fill="none" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M36.16 41.75A5.22 9 0 1 0 46.6 41.75A5.22 9 0 1 0 36.16 41.75Z" fill="#b9ddf8" stroke="#34465b" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M37.9 41.75A3.48 6 0 1 0 44.86 41.75A3.48 6 0 1 0 37.9 41.75Z" fill="#328bd3"/>
+  <path d="M39.64 41.75A1.74 3 0 1 0 43.12 41.75A1.74 3 0 1 0 39.64 41.75Z" fill="#236ead"/>
+</svg>

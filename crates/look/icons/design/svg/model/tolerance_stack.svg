@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Tolerance stack</title>
+  <path d="M7.89 13.15L37.89 13.15L37.89 25.15L7.89 25.15Z" fill="#e2e8ef" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M11.89 25.15L35.89 25.15L35.89 37.15L11.89 37.15Z" fill="#b8c3cf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M15.89 37.15L33.89 37.15L33.89 49.15L15.89 49.15Z" fill="#8e9faf" stroke="#34465b" stroke-width="2.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M53.89 13.15L53.89 49.15" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M49.89 13.15L53.89 13.15" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M49.89 25.15L53.89 25.15" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M49.89 37.15L53.89 37.15" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M49.89 49.15L53.89 49.15" fill="none" stroke="#236ead" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M53.89 45.15L53.89 47.15" fill="none" stroke="#236ead" stroke-width="4.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M53.89 52.15L50.39 46.15L57.39 46.15Z" fill="#236ead"/>
+</svg>
